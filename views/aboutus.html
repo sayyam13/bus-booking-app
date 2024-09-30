@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>About Us</title>
+        <link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">           
+    <style>
+
+        body{
+            font-family: DM Sans;
+        }
+/* -------------------------------------------------------------------------------------------------------------------------------*/
+        /* Header section */
+        header{
+            background-color: white;
+            border: 2px solid white;
+            padding: 7px;
+            height: 70px;
+            position:relative;
+            box-shadow: 0px 0px 10px rgb(174, 173, 173);
+            left:0px;
+            top:0px;
+            right:0px;
+           /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);*/
+        }
+        header img{
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        #company_name{
+            margin-top: -52px;
+            margin-left: 64px;
+            font-size: 21px;
+            color:#f77054;
+        }
+
+        .header_navigation_container1{
+            margin-top: -3%;
+            margin-left: 90%;
+            /* border: 2px solid black; */
+            width: fit-content;
+        }
+
+        .nav_button1{
+            font-size: 17px;
+            background-color: transparent;
+            border: none;
+            margin-top: 3px;
+            cursor: pointer;
+        }
+
+/* -------------------------------------------------------------------------------------------------------------------------------*/
+        /* About us Section */
+
+        .aboutus_section{
+            background-color: #F4F4F4;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .aboutus_section_container{
+            width: 980px;
+            margin : 0 auto;
+        }
+
+        .aboutus_section_container_para, .management_team_member_info_para{
+            font-size: 15px;
+            color : #767676;
+            text-align: justify;
+        }
+        .img_container1{
+            width: 20%;
+        }
+
+        .member_img{
+            width: 175px;
+            height: 175px;
+            border-radius: 90px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+
+        .member_information{
+            margin-top: -19.5%;
+            margin-left: 24%;
+        }
+        .team_container{
+            margin-bottom: 47px;
+        }
+
+        .aboutus_section .aboutus_section_container h1, h2, h3{
+            color:#EB6F55;
+        }
+
+/* -------------------------------------------------------------------------------------------------------------------------------*/
+        /* Footer Section */
+        .footer_section{
+            background-color:#0D0D3D ;
+            height : 320px;
+        }
+
+        .footer_section_list_container {
+            display: flex;
+            font-size: 15px;
+            color: white;
+            margin-left: 78%;
+            width: 305px;
+            height: fit-content;
+        }
+        .footer_section_list {
+            width: 68%;
+            padding: 0;
+            list-style: none;
+            margin-top: 41px;
+            cursor: pointer;
+        }
+
+        .footer_section_list li {
+            margin-bottom: 5px;
+        }
+
+        .footer_section_list li h4{
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        #footer_section_hrline{
+            border: 1px solid white;
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+
+        #copyrights_text{
+            font-size: 17px;
+            color: white;
+            margin-left: 40px;
+            margin-top: 36px;
+        }
+
+        .footer_section_social_links_container {
+            color: white;
+            padding: 0px;
+            text-align: right;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 16px;
+            margin-top: -46px;
+            margin-right: 46px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 37px;
+            height: 37px;
+            background-color: white;
+            border-radius: 50%;
+            margin: 15 0px;
+            text-decoration: none;
+            color: black;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-link i {
+            font-size: 20px;
+        }
+
+        .footer_section_social_links_container .social-link:hover {
+                cursor: pointer;
+            }
+        .footer_section_social_links_container .fa-linkedin:hover {
+                color: #0A66C2;
+            }
+        .footer_section_social_links_container .fa-google:hover {
+                color:rgb(228, 77, 77);
+            }
+        .footer_section_social_links_container .fa-facebook:hover {
+                color: #3b5998;
+            }
+        .footer_section_social_links_container .fa-twitter:hover {
+                color: #00acee;
+            }
+        .footer_section_social_links_container .fa-instagram:hover {
+                color: #C13584; 
+            }
+
+        .line {
+                font-size:20px;
+                color: white;
+                margin: 0 5px;
+            }
+    </style>
+    </head>
+    <body>
+        <section class="header_section">
+            <header>
+                <img src="/gradious_logo.png">
+                <h3 id="company_name">gradiousBus</h3>
+                <div class="header_navigation_container1">
+                    <button class="nav_button1" onclick="home()">Home</button>
+                </div>
+            </header>
+           </section>
+
+           <section class="aboutus_section">
+                <div class="aboutus_section_container">
+                    <h1>ABOUT US</h1>
+                    <p class="aboutus_section_container_para" id="p1">
+                        gradiousBus is the world's largest online bus ticket booking service trusted by over 25 million happy customers globally. gradiousBus offers bus ticket booking through its website, iOS and Android mobile apps for all major routes.
+                        gradiousBus is India's largest online bus ticketing platform that has transformed bus travel in the country by bringing ease and convenience to millions of Indians who travel using buses. Founded in 2006, gradiousBus is part of India's leading online travel company MakeMyTrip Limited (NASDAQ: MMYT). By providing widest choice, superior customer service, lowest prices and unmatched benefits, gradiousBus has served over 18 million customers.
+                    </p>
+                    <h2>Management Team</h2>
+                    <div class="team_container">
+                        <div class="img_container1">
+                            <div class="img_container2">
+                                <img class="member_img" src="./CEO1.jpg">
+                            </div>
+                        </div>
+                        <div class="member_information">
+                            <h3>Ravi Sharma, CEO</h3>
+                            <p class="management_team_member_info_para">
+                                Ravi Sharma has been Chief Executive Officer of gradiousBus since June 2014. 
+                                Prior to gradiousBus. He served as an Executive Vice President of Info Edge India (Naukri group),
+                                heading two group businesses namely Shiksha.com and Jeevansathi.com. 
+                                He's also worked as General Manager of Marketing and Innovation at Airtel and has also had multiple roles across Marketing, Brand Management and Sales at Hindustan Unilever. Prakash has completed his MBA from IIM Calcutta and also holds an Honours degree in Production Engineering from Mumbai University.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="team_container">
+                        <div class="img_container1" >
+                            <div class="img_container2" >
+                                <img class="member_img"  src="/CEO2.jpg">
+                            </div>
+                        </div>
+                        <div class="member_information">
+                            <h3>Sneha Patel, CTO</h3>
+                            <p class="management_team_member_info_para">
+                                Sneha Patel serves as Chief Technology Officer at GradiouBus. 
+                                Sneha plays a pivotal role in shaping the company's strategic vision, driving innovation, and ensuring future growth. 
+                                Leading the delivery of scalable technological solutions to customers, agents, and bus operators, she is committed to incorporating the latest advancements in technology. 
+                                With over 18 years of extensive experience in developing high-performing products across telecom, internet, and mobile ecommerce sectors, Sneha is known for her expertise in building robust and scalable systems. 
+                                She firmly believes in the power of hard work and dedication to overcome obstacles and achieve success. 
+                                Sneha holds a Bachelor's degree in Computer Science from Delhi University and is passionate about sports, movies, TV shows, and music.
+                            </p>
+                        </div>                  
+                    </div>
+           </section>
+
+        </section>
+
+        <section class="footer_section">
+            <div class="footer_section_list_container">
+                <ul class="footer_section_list">
+                    <li><h4>Info</h4></li>
+                    <li>T&C</li>
+                    <li>Privacy policy</li>
+                    <li>FAQ</li>
+                    <li>Blog</li>
+                </ul>
+                <ul class="footer_section_list">
+                    <li><h4>Our Partners</h4></li>
+                    <li>Goibibo Bus</li>
+                    <li>Goibibo Hotels</li>
+                    <li>Makemytrip Hotels</li>
+                </ul>
+            </div>
+            <hr id="footer_section_hrline">
+            <p id="copyrights_text">​© 2024 Gradious India Pvt Ltd. All rights reserved</p>
+
+            <div class="footer_section_social_links_container">
+                <a href="https://www.facebook.com/Gradious" target="_blank" class="social-link"><i class="fa fa-facebook"></i></a>
+                <span class="line">|</span>
+                <a href="https://gradious.com/" target="_blank" class="social-link"><i class="fa fa-google"></i></a>
+                <span class="line">|</span>
+                <a href="https://twitter.com/Gradious3" target="_blank" class="social-link"><i class="fa fa-twitter"></i></a>
+                <span class="line">|</span>
+                <a href="https://www.linkedin.com/company/gradious/"target="_blank"  class="social-link"><i class="fa fa-linkedin"></i></a>
+                <span class="line">|</span>
+                <a href="https://www.instagram.com/company/gradious/"target="_blank"  class="social-link"><i class="fa fa-instagram"></i></a>
+            </div>
+        </section>
+
+        <script>
+            function home(){
+                fetch('/home')
+                .then(() => window.location.href = '/home')
+                .catch(error => console.error('Home Page error:', error));
+            }
+        </script>
+    </body>
+</html>

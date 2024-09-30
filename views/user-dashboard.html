@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>user dashboard</title>
+
+    <style>
+        body {
+            font-family: DM Sans;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #E7E6E6;
+        }
+
+/* -------------------------------------------------------------------------------------------------------------------------------*/
+        /* Header section */
+        header{
+            background-color: white;
+            border: 2px solid white;
+            padding: 7px;
+            height: 70px;
+            box-shadow: 0px 0px 10px rgb(174, 173, 173);
+           /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);*/
+        }
+        header img{
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        #company_name{
+            margin-top: -52px;
+            margin-left: 64px;
+            font-size: 21px;
+            color:#f77054;
+        }
+
+        .header_navigation_container1{
+            margin-top: -3%;
+            margin-left: 90%;
+            /* border: 2px solid black; */
+            width: fit-content;
+        }
+
+        .nav_button1{
+            font-size: 18px;
+            background-color: transparent;
+            border: none;
+            margin-top: 3px;
+            cursor: pointer;
+        }
+
+/* -------------------------------------------------------------------------------------------------------------------------------*/
+    /*Side bar section */
+
+        .sidebar_section{
+            background-color: #E7E6E6;
+        }
+
+        .sidebar {
+            width: 240px;
+            height: 100%;
+            background-color: #E7E6E6;
+            color: white;
+            margin-top: 10px; 
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: fixed;
+            border-right: 2px solid #c0bdbd;
+        }
+
+
+        .user-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 10px;
+            margin-top: 10%;
+            cursor: pointer;
+        }
+
+        .user-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .user-name {
+            margin: 0;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left : 50%;
+            color : #51504e;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .sidebar hr {
+            width: 80%;
+            margin: 10px 0;
+            border: 0.5px solid #c0bdbd;
+        }
+
+        .sidebar-button {
+            background-color: #f77054;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            width: 80%;
+            border-radius: 7px;
+            font-size: 15px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .sidebar button:hover{
+            background-color: black;
+        }
+    
+/* -------------------------------------------------------------------------------------------------------------------------------*/
+        /*My Profile section */
+
+        .profiledata-container {
+            display: none;
+            max-width: 750px;
+            margin: 100px 32%;
+            margin-right: -90px;
+            background-color: white;
+            padding: 30px;
+          /*  border : 3px solid #f77054;*/
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            height : 340px;
+            color : #51504e;
+            letter-spacing: 0.5px; 
+        }
+
+        #profile-heading{
+            color : #51504e;
+            text-transform: uppercase;
+        }
+        #info-hr{
+            border: 1px solid #c0bdbd;
+        }
+
+        #info-group-container{
+            margin-top : 20px;
+        }
+
+        .info-group {
+            display: flex;
+            margin-bottom: 20px;
+            font-size: 19px;
+            color : #51504e;
+        }
+    
+        .user-name{
+           width: 100%;
+           text-align: center; 
+           margin-left: 0px;
+        }
+        .profile_p {
+            width: 46.5%;
+            margin-right: 20px;
+            
+        }
+
+        .profile_p_p2{
+            margin-left: 60px;
+        }
+
+        #profile_p2 {
+            width: fit-content;
+            margin-top: 50px;
+            margin-bottom: -5px;
+        }
+
+        .contact_details_container{
+            
+            margin-bottom: -70px;
+            margin-top: 40px;
+        }
+
+        .contact_details_left_line{
+            display: inline-block;
+            width: 31.7%;
+            height: 1px;
+            background-color: #c0bdbd;
+            margin: 0 10px;
+            margin-top: 20px;
+            vertical-align: middle;
+        }
+
+        .contact_details_right_line{
+            display: inline-block;
+            width: 35%;
+            height: 1px;
+            background-color: #c0bdbd;
+            margin: 0 10px;
+            margin-top: -105px;
+            margin-left: 65%;
+            vertical-align: middle;
+
+        }
+
+
+        .contact_details_text {
+            color : #51504e;
+            padding: 0 20px;
+            margin-top: -14px;
+            margin-left : 33%;
+            font-size: 22px;
+            width: fit-content;
+            font-weight: none;
+        }
+
+
+   /*     #email-div{
+            margin-top: 10px;
+            font-size: 19px;
+            font-weight: bold;
+        }
+*/
+        #ok{
+            font-size:19px;
+            font-weight: bold;
+            color:white;
+            width : 13%;
+            padding: 10px;
+            margin-top: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: #EB6F55;
+            border: none;
+        }
+
+        #ok:hover{
+            background-color: #f55131;
+        }
+/* -------------------------------------------------------------------------------------------------------------------------------*/
+        /*Booking Form section */
+        #booking-form-container {
+            max-width: 550px;
+            margin: 34px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            display: none;
+            color : #51504e;
+            height : auto;
+            margin-left : 38%;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+        }
+
+        #booking-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .form-info-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        label {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            margin-top : 15px;
+            cursor: pointer;
+        }
+
+        input,
+        select {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #book_now,#cancel {
+            font-size: 19px;
+            font-weight: bold;
+            color: #183153;
+            width: 15%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: #EB6F55;
+            color: white;
+            border: none;
+            height : 80px;
+        }
+
+        #book_now:hover,#cancel {
+            background-color: #D74F57;
+        }
+        #book_now:hover {
+            background-color: #f55131;
+        }
+
+        #cancel:hover {
+            background-color: #e83944;
+        }
+
+        .error-message {
+                color: red;
+                font-size: 14px;
+            
+                font-weight: bold;
+            }
+
+        #ticket_instruction{
+            font-size: 13px;
+        }
+
+/* -------------------------------------------------------------------------------------------------------------------------------*/
+        /* Pending Bookings Table */
+
+        #pending-bookings-container {
+            margin: 20px;
+            margin-left: 270px;
+           /* border: 2px solid black; */
+            overflow: auto;
+            letter-spacing: 0.5px;
+        }
+
+        #pending-bookings-container h2{
+            text-align: center;
+            text-transform: uppercase;
+        } 
+
+        #pending-bookings-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-left : 0%;
+            
+        }
+
+        #pending-bookings-table th, #pending-bookings-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        #pending-bookings-table th {
+            background-color: #f77054;
+            padding : 15px;
+            color: white;
+            cursor: pointer;
+        }
+
+        #pending-bookings-table tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #pending-bookings-table .duration-column {
+            width: 160px; /* Adjust the width as needed */
+        }
+
+        .duration-column-editing {
+            width: 150px; /* Adjust the width as needed during editing */
+        }
+
+        #editButton{
+            margin-left : 10px;
+        }
+        #deleteButton{
+            margin-left : 10px;
+        }
+
+        #saveButton{
+            border-radius: 6px;
+            background-color: rgb(54, 168, 54);
+            font-weight: bold;
+            color : white;
+            font-size: 15px;
+            border : none;
+            cursor: pointer;
+            width : 90px;
+            padding : 7px;
+            margin-left: 13%;
+        }
+
+        #cancelButton{
+            border-radius: 6px;
+            background-color: #f55131;
+            font-weight: bold;
+            color : white;
+            font-size: 15px;
+            border : none;
+            cursor: pointer;
+            width : 90px;
+            padding : 7px;
+            margin-left: 13%;
+            margin-top : 5px;
+        }
+
+        #saveButton:hover{
+            background-color: #05b776;
+        }
+
+        #cancelButton:hover{
+            background-color: #e83944;
+        }
+   /*     #pending-bookings-table tbody tr:hover {
+            background-color: #63f4b3;
+            cursor: pointer;
+        }
+    */
+
+/* -------------------------------------------------------------------------------------------------------------------------------*/
+        /* AGENT'S Booking History*/
+
+        #booking-history-container {
+            margin-left: 20%;
+            margin-top: 30px;
+            
+        }
+
+        .booking-entry {
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #FFF;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            margin-left: 0%;
+            width: 90%;
+            transition: background-color 0.3s; 
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            color : #51504e;
+           /* border: 3.5px solid #f55131; */
+        }
+
+        .booking-entry p {
+            font-weight: bold;
+        }
+
+        .customer_name{
+           /*  border: 2px solid; */
+            text-align: center;
+            width: 61%;
+            text-transform: uppercase;
+            font-size: 22px;
+            margin-left: 20%;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 11px;
+        }
+
+        .source_city{
+          /*  border: 2px solid; */
+            text-align: center;
+            width: fit-content;
+            text-transform: capitalize;
+            font-size: 27px;
+            margin-left: 31%;
+            font-weight: bold;
+            margin-top: -51px;
+            padding: 2px;
+        }
+
+        .arrow_icon{
+            /*  border: 2px solid; */
+            text-align: center;
+            width: fit-content;
+            text-transform: capitalize;
+            font-size: 51px;
+            margin-left: 48%;
+            font-weight: bold;
+            padding: 2px;
+            margin-top: 12px;
+            color : #f55131;
+
+        }
+
+        .destination_city{
+            /*  border: 2px solid; */
+            text-align: center;
+            width: fit-content;
+            text-transform: capitalize;
+            font-size: 27px;
+            margin-left: 56%;
+            font-weight: bold;
+            margin-top: -65.6px;
+            padding: 2px;
+        }
+
+        .booking-date-text{
+            font-size: 16px;
+            font-weight: none;
+            display: block;
+            margin-top: -83px;
+            margin-left: 20px;
+            width: fit-content;
+            height: -81%;
+            text-align: center;
+            color: #51504e;
+        }
+
+        .formatted-date{
+            font-size: 40px;
+            /* border: 2px solid; */
+            margin-left: 20px;
+            /* margin-top: 144px; */
+            /* width: 27%; */
+            height: -81%;
+            text-align: center;
+        }
+
+        .departure-time-text{
+            font-size: 16px;
+            font-weight: none;
+            display: block;
+            margin-top: -73px;
+            margin-left: 82%;
+            width: fit-content;
+            height: -82%;
+            text-align: center;
+            color: #51504e;
+        }
+
+        .departure-time{
+            font-size: 40px;
+            /* border: 2px solid; */
+            margin-left: 82%;
+            /* margin-top: 144px; */
+            /* width: 27%; */
+            height: -81%;
+            text-align: center;
+        }
+
+        .duration_minutes{
+            width: fit-content;
+            margin-left: 45%;
+            font-size: 15px;
+        }
+
+        .total-amount-text{
+            font-size: 14px;
+            font-weight: none;
+            display: block;
+            margin-top: 46px;
+            margin-left: 20px;
+            width: fit-content;
+            height: -82%;
+            text-align: center;
+            color: #51504e;
+        }
+
+        .total-amount{
+            font-size: 30px;
+            display: block;
+            margin-bottom: -57px;
+            /* border: 2px solid; */
+            margin-left: 20px;
+            /* margin-top: 144px; */
+            width: fit-content;
+            height: -81%;
+            text-align: center;
+        }
+
+        .payment-method-text{
+            font-size: 14px;
+            font-weight: none;
+            display: block;
+            margin-top: 3px;
+            margin-left: 46.5%;
+            width: fit-content;
+            height: -82%;
+            text-align: center;
+            color: #51504e;
+        }
+
+        .payment-method{
+            font-size: 30px;
+            display: block;
+            margin-bottom: 0px;
+            /* border: 2px solid; */
+            margin-left: 46.5%;
+            /* margin-top: 144px; */
+            width: fit-content;
+            height: -81%;
+            text-align: center;
+        }
+
+        .ticket-status-text{
+            font-size: 14px;
+            font-weight: none;
+            display: block;
+            margin-top: -57px;
+            margin-left: 82.6%;
+            width: fit-content;
+            height: -82%;
+            text-align: center;
+            color: #51504e;
+        }
+
+        .ticket-status{
+            font-size: 30px;
+            display: block;
+            margin-bottom: 17px;
+            /* border: 2px solid; */
+            margin-left: 82.6%;
+            /* margin-top: 144px; */
+            width: fit-content;
+            height: -81%;
+            text-align: center;
+            color : #f55131;
+        }
+
+        .ticket_header_div{
+            background-color: #F4F4F4;
+            padding: 8px;
+            padding-bottom: 12px;
+            border-radius: 10px;
+        }
+
+        .ticket_gradiousbus_logo{
+            width: 45px;
+            height: 45px;
+        }
+
+        .ticket_heading{
+            margin-top: -47px;
+            font-size: 19px;
+            margin-left: 56px;
+            color: #f77054;
+        }
+
+        .phone_icon{
+            display: block;
+            margin-top: -31.8px;
+            margin-left: 87%;
+            width: fit-content;
+        }
+
+        .phone_number{
+            display: block;
+            margin-left: 89%;
+            width: fit-content;
+            margin-top: -19.5px;
+            margin-bottom: 10px;
+            font-size: 16.5px;
+        }
+
+        .ticket_footer_div{
+            background-color:#f77054;
+            border: 2px solid balck;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .footer_text{
+            text-align: center;
+            display: inline-block;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            /* border: 2px solid black; */
+            width: 100%;
+        }
+
+        .ticket-id{
+            text-align: center;
+            color: #51504e;
+            width: fit-content;
+            position: relative;
+            margin-bottom: -17px;
+            left: 20px;
+        }
+
+        .download-button{
+            border: 2px solid #ef5924;
+            display: block;
+            margin-top: -234px;
+            position: absolute;
+            right: 33px;
+            padding: 5px 8px 5px 8px;
+            font-size: 30px;
+            border-radius: 24px;
+            color: #f77054;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            background-color: white;
+        }
+
+        .gender-age{
+            display: block;
+            margin-top: -312px;
+            position: absolute;
+            right: 201px;
+            padding: 5px 8px 5px 8px;
+            font-size: 17px;
+            border-radius: 24px;
+            color: #51504e;
+            /* color: #f77054; */
+            cursor: pointer;
+            /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); */
+            background-color: white;
+        }
+    </style>
+</head>
+<body loadpageelements()>
+
+    <section class="header_section">
+        <header>
+            <img src="/Gradious-logo1.png">
+            <h3 id="company_name">gradiousBus</h3>
+            <div class="header_navigation_container1">
+                <button class="nav_button1" onclick="logout()"><i class="fa fa-sign-out"></i>Logout</button>
+            </div>
+        </header>
+    </section>
+
+    <section class="sidebar_section">
+    <div class="sidebar">
+        <div class="user-circle">
+            
+            <img src="/user1.png" alt="user Profile">
+        </div>
+        <p class="user-name" >fullname</p>
+        <hr>
+        <button class="sidebar-button" onclick="viewProfile()">Profile</button>
+        <button class="sidebar-button" onclick="openBookingForm()">Book Ticket</button>
+        <button class="sidebar-button" onclick="showPendingBookings()">Pending</button>
+        <button class="sidebar-button" onclick="showBookingHistory()">Booking History</button>
+    </div>
+    </section>
+
+    <div id="profiledata-container" class="profiledata-container">
+
+        <h2 id="profile-heading">Personal information</h2>
+        <hr id="info-hr">
+        <div id="info-group-container"></div>
+            <div class="info-group">     
+                <p class="profile_p" >Full Name - <span class="fname">fname</span> <span class="lname">lname</span></p>
+                <p class="profile_p_p2" >Gender - <span class="gen">gen</span></p>
+            </div>
+
+            <div class="contact_details_container">
+                <div class="contact_details_left_line"></div>
+                <p class="contact_details_text">CONTACT DETAILS</p>
+                <div class="contact_details_right_line"></div>
+            </div>
+
+            <div class="info-group">     
+                <p class="profile_p" id="profile_p2">Email - <span class="email">example@gmail.com</span></p>
+                <p class="profile_p_p2" id="profile_p2">Mobile No - <span class="mob">mob</span></p>
+                
+            </div>
+            <button id="ok" type="submit" onclick="closetheprofilecontainer()"> Ok </button>
+        </div>  
+    </div>
+
+    <div id="booking-form-container" class="profiledata-container">
+        <h2 id="profile-heading">Book Ticket</h2>
+        <p id ="ticket_instruction">Note - Tickets information can only be modified before confirmation. After confirmation, ticket details cannot be changed or canceled. </p>
+        <hr id="info-hr">
+    
+        <form action ="/bookTicket" method="post" id="booking-form" enctype="application/x-www-form-urlencoded" onsubmit="submitBookingForm()">
+            <!-- First Row  (coulmn)-->
+            <div class="form-info-group">
+
+                <label for="source_city">Source City</label>
+                <select id="source_city" name="source_city" required>
+                    
+                </select>
+
+                <span id="customer_name_error" class="error-message"></span>
+                <label for="customer_name">Passenger Name</label>
+                <input type="text" id="customer_name" name="customer_name" required>
+
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+
+                <label for="booking_date">Booking Date</label>
+                <input type="date" id="booking_date" name="booking_date" required>
+
+                <label for="total_amount">Total Fare</label>
+                <input type="number" id="total_amount" name="total_amount" required disabled>
+
+                <input type="hidden" id="duration_minutes_hidden" name="duration_minutes">
+                <input type="hidden" id="total_amount_hidden" name="total_amount">
+                <input type="hidden" id="booking_time_hidden" name="booking_time">
+
+            </div>
+    
+            <!-- Second Row (coulmn) -->
+            <div class="form-info-group">
+              
+                <label for="destination_city">Destination City</label>
+                <select id="destination_city" name="destination_city" required>
+
+                </select>
+
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" required>
+
+                <span id="email_id_error" class="error-message"></span>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="enter email" required>
+
+                <label for="booking_time">Departure Time</label>
+                <input type="time" id="booking_time" name="booking_time" required disabled>
+
+                <label for="payment_method">Payment Method</label>
+                <select id="payment_method" name="payment_method" required>
+                    <option value="online">Online</option>
+                    <option value="offline">Offline</option>
+                </select>
+
+             
+            </div>
+          
+            <!-- Third Row (coulmn wise)-->
+ 
+            <div class="form-info-group">  
+                <label for="duration_minutes">Journey duration (min)</label>
+                <input type="number" id="duration_minutes" name="duration_minutes" required disabled>
+            </div>
+    
+            <button id="book_now" type="submit" onclick="submitBookingForm()">Book Now</button>
+            <button id="cancel" type="button" onclick="closeBookingForm()">Cancel</button>
+        
+        </form>
+    </div>
+
+    <!--pending booking data table -->
+
+    <div id="pending-bookings-container" style="display: none;">
+        <h2>Pending Bookings</h2>
+        <table id="pending-bookings-table" border="1">
+
+                <tr>
+                    <th>ID</th>
+                    <th>Passenger Name</th>
+                    <th>Journey Date</th>
+                    <th>Departure Time</th>
+                    <th>Total Fare</th>
+                    <th>Status</th>
+                    <th>Payment Method</th>
+                    <th>Duration (min)</th>
+                    <th>Source City</th>
+                    <th>Destination City</th>
+                    <th>Action</th>
+                </tr>
+
+        </table>
+    </div>
+    
+    <div id="booking-history-container"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <script>
+        function logout() {
+            
+            fetch('/logout', { method: 'POST' })
+                .then(() => window.location.href = '/login')
+                .catch(error => console.error('Logout error:', error));
+        }
+
+        function loadpageelements(){
+            fetch('/getuser')
+                .then(response => response.json())
+                .then(data => {     
+                const fullname = document.querySelector('.user-name');
+                fullname.textContent = data.firstname + " " + data.lastname;
+
+            })
+            .catch(error => console.error('Error fetching user:', error));
+        }
+        
+        //(Ticket Booking From)
+        // Real-time validation for customer name
+        const customerNameInput = document.getElementById('customer_name');
+        const customerNameError = document.getElementById('customer_name_error');
+
+        customerNameInput.addEventListener('input', () => {
+            const isValid = /^[a-zA-Z\s]+$/.test(customerNameInput.value);
+            customerNameError.textContent = isValid ? '' : 'Name should only conatin letters';
+        });
+
+        // Real-time validation for email address
+        const emailIdInput = document.getElementById('email');
+        const emailIdError = document.getElementById('email_id_error');
+
+        emailIdInput.addEventListener('input', ()=>{
+            const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailIdInput.value);
+            emailIdError.textContent = isValid ? '' : 'enter valid email address';
+        })
+
+        function openBookingForm() {
+            document.getElementById('profiledata-container').style.display = 'none';
+            document.getElementById('booking-history-container').style.display = 'none';
+            document.getElementById('pending-bookings-container').style.display = 'none';
+            document.getElementById('booking-form-container').style.display = 'block';
+        }
+
+        function closeBookingForm() {
+        // Clear form fields
+        const bookingForm = document.getElementById('booking-form');
+        bookingForm.reset();
+
+        // Reset error messages
+        customerNameError.textContent = '';
+        emailIdError.textContent = '';
+            
+        }
+
+        // Function to fetch data from the server
+        function fetchData(url, callback) {
+            fetch(url)
+                .then(response => response.json())
+                .then(data => callback(data))
+                .catch(error => console.error('Error fetching data:', error));
+        }
+
+        // Function to populate select dropdown
+        function populateSelect(selectElement, data) {
+            selectElement.innerHTML = '';
+            const option = document.createElement('option');
+            option.value = "";
+            option.textContent = 'select city';
+            option.disabled = true;
+            option.selected = true;
+            selectElement.appendChild(option)
+
+            data.forEach(item => {
+                const option = document.createElement('option');
+                option.value = item.value;
+                option.textContent = item.label;
+                selectElement.appendChild(option);
+            });
+        }
+
+        // Function to update fields based on selected cities
+        function updateFields(sourceCity, destinationCity,age) {
+            // Fetch route data from the server
+            const routeUrl = `/getRouteData?source=${sourceCity}&destination=${destinationCity}`;
+            fetchData(routeUrl, data => {
+                document.getElementById('duration_minutes_hidden').value = data.duration;
+                document.getElementById('booking_time_hidden').value = data.departureTime;
+
+                const fare = age >= 12 ? data.adultFare : data.childFare;
+                document.getElementById('total_amount_hidden').value = fare;
+
+                
+                // Update visible input fields for user display (optional)
+                document.getElementById('duration_minutes').value = data.duration;
+                document.getElementById('booking_time').value = data.departureTime;
+                document.getElementById('total_amount').value = fare;
+            });
+        }
+
+        // Function to handle city selection
+        function handleCitySelection() {
+            const sourceCity = document.getElementById('source_city').value;
+            const destinationCity = document.getElementById('destination_city').value;
+            const age = document.getElementById('age').value;
+            updateFields(sourceCity, destinationCity,age);
+        }
+
+        // Fetch source and destination city data and populate select dropdowns
+        window.addEventListener('DOMContentLoaded', () => {
+            // Fetch source cities from the server
+            const sourceUrl = '/getSourceCities';
+            fetchData(sourceUrl, sourceCities => {
+                populateSelect(document.getElementById('source_city'), sourceCities);
+            });
+
+            // Fetch destination cities from the server
+            const destinationUrl = '/getDestinationCities';
+            fetchData(destinationUrl, destinationCities => {
+                populateSelect(document.getElementById('destination_city'), destinationCities);
+            });
+
+            // Add event listener for city selection
+            document.getElementById('source_city').addEventListener('change', handleCitySelection);
+            document.getElementById('destination_city').addEventListener('change', handleCitySelection);
+            document.getElementById('age').addEventListener('input', handleCitySelection);
+        });
+
+        /* displaying pending bookings */
+
+        function showPendingBookings() {
+        document.getElementById('profiledata-container').style.display = 'none';
+        document.getElementById('booking-form-container').style.display = 'none';
+        document.getElementById('booking-history-container').style.display = 'none';
+        document.getElementById('pending-bookings-container').style.display = 'block';
+
+        fetch('/getPendingBookings')
+            .then(response => response.json())
+            .then(data => {
+                const pending_bookings_table = document.getElementById('pending-bookings-table');
+                pending_bookings_table.innerHTML = "<tr><th>ID</th><th>Passenger Name</th><th>Journey Date</th><th>Departure Time</th><th>Total Fare</th><th>Status</th><th>Payment Method</th><th>Duration (min)</th><th>Source City</th><th>Destination City</th><th>Action</th></tr>";
+
+                data.forEach(booking => {
+                    const row = pending_bookings_table.insertRow(-1);
+                    console.log(booking);
+
+                    // Convert the ISO date string to a Date object
+                    const bookingDate = new Date(booking.Booking_Date);
+
+                    // Format the date to display only the date portion
+                    const formattedDate = bookingDate.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'numeric',
+                    day: 'numeric'
+                    });
+
+                        // Populate the table rows with booking data
+                        row.insertCell(0).textContent = booking.ID;
+                        row.insertCell(1).textContent = booking.Customer_Name;
+                        row.insertCell(2).textContent = formattedDate;
+                        row.insertCell(3).textContent = booking.Booking_Time;
+                        row.insertCell(4).textContent = booking.Total_Amount;
+                        row.insertCell(5).textContent = booking.Status;
+                        row.insertCell(6).textContent = booking.Payment_Method;
+                        row.insertCell(7).textContent = booking.Duration_Minutes;
+                        row.cells[7].classList.add('duration-column');
+                        row.insertCell(8).textContent = booking.Source_City;
+                        row.insertCell(9).textContent = booking.Destination_City;
+                        const actionCell = row.insertCell(10);
+
+                        // Edit button with Font Awesome icon
+                        const editButton = document.createElement('button');
+                        editButton.id = 'editButton';
+                        editButton.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>';
+                        editButton.addEventListener('click', () => editBooking(booking.ID));
+                        actionCell.appendChild(editButton);
+
+                        // Delete button with Font Awesome icon
+                        const deleteButton = document.createElement('button');
+                        deleteButton.id = 'deleteButton';
+                        deleteButton.innerHTML = '<i class="fas fa-trash-alt"></i>';
+                        deleteButton.addEventListener('click', () => deleteBooking(booking.ID));
+                        console.log("\n book.id - ", booking.ID);
+                        actionCell.appendChild(deleteButton);
+                        
+                });
+            })
+            .catch(error => console.error('Error fetching pending bookings:', error));
+    }
+
+            /* CRUD Operation on pending bookings data */
+
+            function formatDate(dateString) {
+                // Split the date string into parts using '/'
+                console.log("\n Date String : ", dateString);
+                const dateParts = dateString.split('/');
+
+                // Rearrange the parts in the 'YYYY-MM-DD' format
+                const formatted1Date =  dateParts[0] ;
+                console.log("\n Formated Date : ", formatted1Date);
+                return formatted1Date;
+            }
+
+            function editBooking(bookingId) {
+                console.log("\n Booking Id : ", bookingId);
+                const pending_bookings_table = document.getElementById('pending-bookings-table');
+                const row = Array.from(pending_bookings_table.rows).find(row => row.cells[0].textContent === bookingId.toString());
+
+                //here we are  Saving the original values before editing so when we cancel our editing it should restored old/previous values
+                const originalValues = {
+                ID: row.cells[0].textContent,
+                Customer_Name: row.cells[1].textContent,
+                Booking_Date: row.cells[2].textContent,
+                Booking_Time: row.cells[3].textContent,
+                Total_Amount: row.cells[4].textContent,
+                Status: row.cells[5].textContent,
+                Payment_Method: row.cells[6].textContent,
+                Duration_Minutes: row.cells[7].textContent,
+                Source_City: row.cells[8].textContent,
+                Destination_City: row.cells[9].textContent,
+            };
+
+                // displaying input fields for editing
+                row.cells[1].innerHTML = `<input type="text" value="${row.cells[1].textContent}" id="editCustomerName">`;
+                row.cells[2].innerHTML = `<input type="date" value="${row.cells[2].textContent}" id="editBookingDate">`;
+                row.cells[3].innerHTML = `<input type="time" value="${row.cells[3].textContent}" id="editBookingTime">`;
+                row.cells[7].innerHTML = `<input class= "duration-column-editing" type="number" value="${row.cells[7].textContent}" id="editDurationMinutes">`;
+                
+                // For Save Button
+                const saveButton = document.createElement('button');
+                saveButton.id = 'saveButton';
+                saveButton.textContent = 'Save';
+                saveButton.addEventListener('click', () => saveEditedBooking(bookingId));
+
+                // For Cancel Button
+                const cancelButton = document.createElement('button');
+                cancelButton.id = 'cancelButton';
+                cancelButton.textContent = 'Cancel';
+                cancelButton.addEventListener('click', () => cancelEditBooking(bookingId, originalValues));
+
+                row.cells[10].innerHTML = '';
+                row.cells[10].appendChild(saveButton);
+                row.cells[10].appendChild(cancelButton);
+    }
+
+        function saveEditedBooking(bookingId) {
+            const editedBooking = {
+            
+            Customer_Name: document.getElementById('editCustomerName').value,
+            Booking_Date: document.getElementById('editBookingDate').value,
+            Booking_Time: document.getElementById('editBookingTime').value,
+            Duration_Minutes: document.getElementById('editDurationMinutes').value,
+
+        };
+            console.log();
+            // Implement updating logic here
+            fetch(`/updateTicketBookingDetails/${bookingId}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(editedBooking),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Update the row in the table
+                        const pending_bookings_table = document.getElementById('pending-bookings-table');
+                        const row = Array.from(pending_bookings_table.rows).find(row => row.cells[0].textContent === bookingId.toString());
+                        row.cells[1].textContent = editedBooking.Customer_Name;
+                        row.cells[2].textContent = editedBooking.Booking_Date;
+                        row.cells[3].textContent = editedBooking.Booking_Time;
+                        row.cells[7].textContent = editedBooking.Duration_Minutes;
+
+                        
+                        // Restore the action buttons
+                        const actionCell = row.cells[10];
+                        actionCell.innerHTML = '';
+                        const editButton = document.createElement('button');
+                        editButton.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>';
+                        editButton.addEventListener('click', () => editBooking(bookingId));
+                        actionCell.appendChild(editButton);
+
+                        const deleteButton = document.createElement('button');
+                        deleteButton.innerHTML = '<i class="fas fa-trash-alt"></i>';
+                        deleteButton.addEventListener('click', () => deleteBooking(bookingId));
+                        actionCell.appendChild(deleteButton);
+                        
+                    } else {
+                        console.error('Error updating book:', data.error);
+                    }
+                })
+                .catch(error => console.error('Error updating book:', error));
+        }
+
+
+        function cancelEditBooking(bookingId, originalValues) {
+
+            // Restore the original values
+            const pending_bookings_table = document.getElementById('pending-bookings-table');
+
+            const row = Array.from(pending_bookings_table.rows).find(row => row.cells[0].textContent === bookingId.toString());
+
+            row.cells[1].textContent = originalValues.Customer_Name;
+            row.cells[2].textContent = originalValues.Booking_Date;
+            row.cells[3].textContent = originalValues.Booking_Time;
+            row.cells[7].textContent = originalValues.Duration_Minutes;
+
+
+            // Restore the action buttons
+            const actionCell = row.cells[10];
+            actionCell.innerHTML = '';
+
+            const editButton = document.createElement('button');
+            editButton.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>';
+            editButton.addEventListener('click', () => editBooking(bookingId));
+
+            const deleteButton = document.createElement('button');
+            deleteButton.innerHTML = '<i class="fas fa-trash-alt"></i>';
+            deleteButton.addEventListener('click', () => deleteBooking(bookingId));
+
+            actionCell.appendChild(editButton);
+            actionCell.appendChild(deleteButton);
+        }
+        
+        function deleteBooking(bookingId) {
+            const confirmation = confirm("Are you sure you want to Cancel the booking request for this Ticket?");
+            if(confirmation){
+            fetch(`/cancelTicketBooking/${bookingId}`, { method: 'DELETE' })
+            .then(response => {
+                if (response.ok) {
+                    // If the deletion is successful then refresh the user list
+                    // Remove the corresponding row from the HTML table
+                    const pending_bookings_table = document.getElementById('pending-bookings-table');
+                    const row = Array.from(pending_bookings_table.rows).find(row => row.cells[0].textContent === bookingId.toString());
+                    pending_bookings_table.deleteRow(row.rowIndex);
+                    showPendingBookings()
+                } else {
+                    console.error('Error deleting user:', response.statusText);
+                }
+            })
+            .catch(error => console.error('Error deleting user:', error));
+        }
+        }
+
+
+        /* displaying whole booking history */
+
+        function showBookingHistory() {
+
+            document.getElementById('profiledata-container').style.display = 'none';
+            document.getElementById('booking-form-container').style.display = 'none';
+            document.getElementById('pending-bookings-container').style.display = 'none';
+            document.getElementById('booking-history-container').style.display = 'block';
+            
+            fetch('/bookingHistory')
+            .then(response => response.json())
+            .then(data => {
+
+                
+                const bookingHistoryContainer = document.getElementById('booking-history-container');
+                bookingHistoryContainer.innerHTML = ''; // Clear previous content
+
+
+                data.forEach(booking => {
+                const bookingDiv = document.createElement('div');
+                bookingDiv.classList.add('booking-entry');
+
+        //---------------------------------------------------------------------------------------------------------
+                /*header of ticket */
+
+                // create header div element
+                const ticketHeaderDiv = document.createElement('div');
+                ticketHeaderDiv.classList.add('ticket_header_div');
+
+                // create image element to add image
+                const logoImg = document.createElement('img');
+                logoImg.src = '/Gradious-logo1.png';
+                logoImg.alt = 'GradiousBus Logo';
+                logoImg.classList.add('ticket_gradiousbus_logo');
+                ticketHeaderDiv.appendChild(logoImg);
+
+                // create heading element
+                const heading = document.createElement('h2');
+                heading.textContent = 'gradiousBus';
+                heading.classList.add('ticket_heading');
+                ticketHeaderDiv.appendChild(heading);
+
+                // create phone icon
+                const phoneIcon = document.createElement('span');
+                phoneIcon.classList.add('fa', 'fa-phone', 'phone_icon');
+                phoneIcon.setAttribute('aria-hidden', 'true');
+                ticketHeaderDiv.appendChild(phoneIcon);
+
+                // create phone number text
+                const phoneNumber = document.createElement('span');
+                phoneNumber.textContent = ' 1800221350 ';
+                phoneNumber.classList.add('phone_number');
+                ticketHeaderDiv.appendChild(phoneNumber);
+
+                bookingDiv.appendChild(ticketHeaderDiv);
+
+        //---------------------------------------------------------------------------------------------------------
+                  /* Ticket ID */
+
+                const ticketIdParagraph = document.createElement('p');
+                ticketIdParagraph.textContent = `Ticket ID: #${booking.ID}`;
+                ticketIdParagraph.classList.add('ticket-id');
+                bookingDiv.appendChild(ticketIdParagraph);
+
+        //---------------------------------------------------------------------------------------------------------
+                // Create and append paragraph elements for each piece of data
+                const customerNameParagraph = document.createElement('p');
+                customerNameParagraph.textContent = `${booking.Customer_Name}`;
+                customerNameParagraph.classList.add('customer_name');
+                bookingDiv.appendChild(customerNameParagraph);
+        
+        //---------------------------------------------------------------------------------------------------------
+                
+                const arrowIcon = document.createElement('i');
+                arrowIcon.classList.add('fa', 'fa-long-arrow-right', 'arrow_icon');
+                bookingDiv.appendChild(arrowIcon);
+
+                const sourceCityParagraph = document.createElement('p');
+                sourceCityParagraph.textContent = `${booking.Source_City}`;
+                sourceCityParagraph.classList.add('source_city');
+                bookingDiv.appendChild(sourceCityParagraph);
+
+                const destinationCityParagraph = document.createElement('p');
+                destinationCityParagraph.textContent = `${booking.Destination_City}`;
+                destinationCityParagraph.classList.add('destination_city');
+                bookingDiv.appendChild(destinationCityParagraph);
+
+        //---------------------------------------------------------------------------------------------------------
+                /* Booking Date */
+
+                const bookingDateParagraph = document.createElement('p');
+                const bookingDate = new Date(booking.Booking_Date);
+                const formattedDate = bookingDate.toLocaleDateString('en-US', { year: 'numeric', month: 'numeric', day: 'numeric' });
+
+                const formattedDateSpan = document.createElement('span');
+                formattedDateSpan.textContent = `${formattedDate}`;
+                formattedDateSpan.classList.add('formatted-date');
+
+                const bookingDateSpan = document.createElement('span');
+                bookingDateSpan.textContent = 'Journey date';
+                bookingDateSpan.classList.add('booking-date-text');
+
+              //  bookingDateParagraph.appendChild(bookingDateSpan);
+
+               // bookingDateParagraph.appendChild(formattedDateSpan);
+
+                bookingDiv.appendChild(bookingDateSpan);
+                bookingDiv.appendChild(formattedDateSpan);
+
+        //---------------------------------------------------------------------------------------------------------
+                /* Booking Time */
+
+                const bookingTimeParagraph = document.createElement('p');
+
+                const departureTimeSpan = document.createElement('span');
+                departureTimeSpan.textContent = 'Departure time';
+                departureTimeSpan.classList.add('departure-time-text');
+
+                const bookingTimeSpan = document.createElement('span');
+                bookingTimeSpan.textContent = `${booking.Booking_Time}`;
+                bookingTimeSpan.classList.add('departure-time');
+
+                bookingDiv.appendChild(departureTimeSpan);
+                bookingDiv.appendChild(bookingTimeSpan);
+
+        //---------------------------------------------------------------------------------------------------------
+                  /* Duration in minutes */
+
+                const durationMinutesParagraph = document.createElement('p');
+                durationMinutesParagraph.textContent = `(duration: ${booking.Duration_Minutes} min)`;
+                durationMinutesParagraph.classList.add('duration_minutes');
+                bookingDiv.appendChild(durationMinutesParagraph);
+
+        //---------------------------------------------------------------------------------------------------------
+                 /* Total Amount */
+
+                const totalAmountParagraph = document.createElement('p');
+
+                const totalAmountTextSpan = document.createElement('span');
+                totalAmountTextSpan.textContent = 'Total Amount';
+                totalAmountTextSpan.classList.add('total-amount-text');
+
+                const totalAmountSpan = document.createElement('span');
+                totalAmountSpan.textContent = `INR ${booking.Total_Amount}`;
+                totalAmountSpan.classList.add('total-amount');
+
+                bookingDiv.appendChild(totalAmountTextSpan);
+                bookingDiv.appendChild(totalAmountSpan);
+
+        
+        //---------------------------------------------------------------------------------------------------------
+
+                // Payment Method 
+
+                const paymentMethodParagraph = document.createElement('p');
+    
+                const paymentMethodTextSpan = document.createElement('span');
+                paymentMethodTextSpan.textContent = 'Payment Method';
+                paymentMethodTextSpan.classList.add('payment-method-text');
+
+                const paymentMethodSpan = document.createElement('span');
+                paymentMethodSpan.textContent = `${booking.Payment_Method}`;
+                paymentMethodSpan.classList.add('payment-method');
+
+                bookingDiv.appendChild(paymentMethodTextSpan);
+                bookingDiv.appendChild(paymentMethodSpan);
+
+
+        //---------------------------------------------------------------------------------------------------------
+                const statusParagraph = document.createElement('p');
+
+                const ticketStatusTextSpan = document.createElement('span');
+                ticketStatusTextSpan.textContent = 'Ticket Status';
+                ticketStatusTextSpan.classList.add('ticket-status-text');
+
+                const ticketStatusSpan = document.createElement('span');
+                ticketStatusSpan.textContent = `${booking.Status}`;
+                ticketStatusSpan.classList.add('ticket-status');
+
+                bookingDiv.appendChild(ticketStatusTextSpan);
+                bookingDiv.appendChild(ticketStatusSpan);
+
+        //---------------------------------------------------------------------------------------------------------
+                /*footer of ticket */
+
+                // create footer div element
+                const ticketFooterDiv = document.createElement('div');
+                ticketFooterDiv.classList.add('ticket_footer_div');
+
+                // create text element 
+                const footer_paragraph = document.createElement('span');
+                footer_paragraph.textContent = '** Your Journey, Our Priority **';
+                footer_paragraph.classList.add('footer_text');
+                ticketFooterDiv.appendChild(footer_paragraph);
+
+                bookingDiv.appendChild(ticketFooterDiv);
+
+        //---------------------------------------------------------------------------------------------------------        
+                // Create download button/icon
+
+                const downloadButton = document.createElement('button');
+                downloadButton.innerHTML = '<i class="fa fa-download"></i>'; 
+                downloadButton.classList.add('download-button');
+
+                downloadButton.addEventListener('click', () => {
+                    downloadBookingAsPDF(bookingDiv, booking);
+                });
+
+                bookingDiv.appendChild(downloadButton);
+
+        //---------------------------------------------------------------------------------------------------------
+                  /* Gender, Age */
+
+                const genderAgeParagraph = document.createElement('p');
+                genderAgeParagraph.textContent = `${booking.Passenger_Gender}, ${booking.Passenger_Age}`;
+                genderAgeParagraph.classList.add('gender-age');
+                bookingDiv.appendChild(genderAgeParagraph);
+
+                bookingHistoryContainer.appendChild(bookingDiv);
+            });
+        })
+        .catch(error => console.error('Error fetching booking history:', error));
+    }
+
+        function submitBookingForm() {
+            
+            // Check if all required fields are filled
+            const customerName = document.getElementById('customer_name').value;
+            const bookingDate = document.getElementById('booking_date').value;
+            const bookingTime = document.getElementById('booking_time').value;
+            const totalAmount = document.getElementById('total_amount').value;
+            const durationMinutes = document.getElementById('duration_minutes').value;
+
+            if (customerName && bookingDate && bookingTime && totalAmount && durationMinutes) {
+                // All required fields are filled, show the alert
+                alert("Your booking request is successfully sent.\nPlease wait for confirmation.\nYou will be notified once it gets confirmed/rejected.");
+            } else {
+                // Not all required fields are filled, provide a warning
+                alert("Please fill in all required fields.");
+            }
+        }
+
+        function viewProfile() {
+            document.getElementById('pending-bookings-container').style.display = 'none';
+            document.getElementById('booking-form-container').style.display = 'none';
+            document.getElementById('booking-history-container').style.display = 'none';
+            document.getElementById('profiledata-container').style.display = 'block';
+            fetch('/getuser')
+            .then(response => response.json())
+            .then (data => {
+                const fname = document.querySelector('.fname');
+                const lname = document.querySelector('.lname');
+                const gen = document.querySelector('.gen');
+                const mob = document.querySelector('.mob');
+                const email = document.querySelector('.email');
+
+                fname.textContent = data.firstname;
+                lname.textContent = data.lastname;
+                gen.textContent = data.gender;
+                mob.textContent = data.mobile;
+                email.textContent = data.email;
+            })
+            .catch(error => console.error('Error fetching user information:', error));
+        }
+
+            function downloadBookingAsPDF(bookingDiv, booking) {
+
+                const downloadButton = bookingDiv.querySelector('.download-button');
+                if (downloadButton) {
+                    downloadButton.style.display = 'none';
+                }
+                const options = {
+                    filename: `booking_${booking.ID}.pdf`,
+                    html2canvas: { scale: 8 },
+                    jsPDF: { unit: 'in', format: 'letter', orientation: 'landscape' }
+                };
+
+                // Use html2pdf to generate and download PDF
+                html2pdf()
+                    .from(bookingDiv)
+                    .set(options)
+                    .save()
+                    .then(() => {
+                        if (downloadButton) {
+                            downloadButton.style.display = 'block';
+                        }
+
+                    });
+            }
+
+        
+        function closetheprofilecontainer(){
+            document.getElementById('profiledata-container').style.display = 'none';
+        }
+        window.onload = loadpageelements();
+    </script>
+    
+    
+
+</body>
+</html>

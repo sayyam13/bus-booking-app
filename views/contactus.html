@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contact Us</title>
+        <link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">           
+    <style>
+
+        body{
+            font-family: DM Sans;
+        }
+/* -------------------------------------------------------------------------------------------------------------------------------*/
+        /* Header section */
+        header{
+            background-color: #F4F4F4;
+            border: 2px solid white;
+            padding: 7px;
+            height: 70px;
+            
+            left:0px;
+            top:0px;
+            right:0px;
+           /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);*/
+        }
+        header img{
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        header h3{
+            margin-top: -52px;
+            margin-left: 64px;
+            font-size: 21px;
+            color:#f77054;
+        }
+
+        .header_navigation_container1{
+            margin-top: -3%;
+            margin-left: 90%;
+            /* border: 2px solid black; */
+            width: fit-content;
+        }
+
+        .nav_button1{
+            font-size: 17px;
+            background-color: transparent;
+            border: none;
+            margin-top: 3px;
+            cursor: pointer;
+        }
+
+/* -------------------------------------------------------------------------------------------------------------------------------*/
+        /* Contact us Heading Section */
+        .contactus_heading_section h1{
+            color: black;
+            background-color: #F4F4F4;
+            text-align:center;
+            padding: 11px;
+        }
+
+        /* styling heading contact us - 
+        color: white;
+        text-align: center;
+        font-size: 28px;
+        */
+/* -------------------------------------------------------------------------------------------------------------------------------*/
+        /* Contact us Section */
+        .contactus_section{
+            background-color: #EB6F55;
+            height: 300px;
+            padding: 20px;
+            padding-bottom: 10px;
+            
+        }
+
+        /*
+            background-color: #EB6F55;
+            height: 300px;
+            padding: 15px;
+            padding-bottom: 68px;
+        */
+        .contactus_section_title{
+            color: white;
+            text-align: center;
+            font-size: 26px;
+        }
+
+        .firstaddress{
+            top: 20px;
+            width: 250px;
+            position: relative;
+            left: 18%;
+        }
+
+        .secondaddress{
+            top: -150px;
+            width: 211px;
+            position: relative;
+            left: 43%;
+        }
+
+        .contact_info{
+            top: -261px;
+            width: 447px;
+            position: relative;
+            left: 65%;
+        }
+        .p1{
+            color : white;
+            font-size: 17.5px;
+        }
+
+        .p2{
+            margin-top: -7px;
+            color : white;
+            font-size: 15px;
+        }
+
+/* -------------------------------------------------------------------------------------------------------------------------------*/
+        /* Footer Section */
+        .footer_section{
+            background-color:#0D0D3D ;
+            height : 320px;
+        }
+
+        .footer_section_list_container {
+            display: flex;
+            font-size: 15px;
+            color: white;
+            margin-left: 78%;
+            width: 305px;
+            height: fit-content;
+        }
+        .footer_section_list {
+            width: 68%;
+            padding: 0;
+            list-style: none;
+            margin-top: 41px;
+            cursor: pointer;
+        }
+
+        .footer_section_list li {
+            margin-bottom: 5px;
+        }
+
+        .footer_section_list li h4{
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        #footer_section_hrline{
+            border: 1px solid white;
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+
+        #copyrights_text{
+            font-size: 17px;
+            color: white;
+            margin-left: 40px;
+            margin-top: 36px;
+        }
+
+        .footer_section_social_links_container {
+            color: white;
+            padding: 0px;
+            text-align: right;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 16px;
+            margin-top: -46px;
+            margin-right: 46px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 37px;
+            height: 37px;
+            background-color: white;
+            border-radius: 50%;
+            margin: 15 0px;
+            text-decoration: none;
+            color: black;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-link i {
+            font-size: 20px;
+        }
+
+        .footer_section_social_links_container .social-link:hover {
+                cursor: pointer;
+            }
+        .footer_section_social_links_container .fa-linkedin:hover {
+                color: #0A66C2;
+            }
+        .footer_section_social_links_container .fa-google:hover {
+                color:rgb(228, 77, 77);
+            }
+        .footer_section_social_links_container .fa-facebook:hover {
+                color: #3b5998;
+            }
+        .footer_section_social_links_container .fa-twitter:hover {
+                color: #00acee;
+            }
+        .footer_section_social_links_container .fa-instagram:hover {
+                color: #C13584; 
+            }
+
+
+        .line {
+                font-size:20px;
+                color: white;
+                margin: 0 5px;
+            }
+
+    </style>
+    </head>
+
+    <body>
+        <section class="header_section">
+            <header>
+                <img src="/gradious_logo.png">
+                <h3>gradiousBus</h3>
+                <div class="header_navigation_container1">
+                    <button class="nav_button1" onclick="home()">Home</button>
+                </div>
+            </header>
+           </section>
+<!--          
+        <section class="contactus_heading_section">
+            <div class="heading_container">
+                <h1>CONTACT US</h1>
+            </div>
+        </section>
+-->
+        <section class="contactus_section">
+            <!--<h1>CONTACT US</h1>-->
+            <h1 class="contactus_section_title">Corporate Head Office-Banglore</h1>
+            <div class="firstaddress">
+                <p class="p1">BANGLORE</p>
+                <p class="p2">
+                    Gradiousbus India Private Limited<br>
+                    Indiqube Leela Galleria,<br>
+                    5th Floor, #No 23, Old Airport Road,<br>
+                    HAL 2nd Stage, Kodihalli Village,<br>
+                    Varthur Hobli, Ward No: 74,<br>
+                    Bengaluru, Karnataka - 560008.
+                </p>
+            </div>
+            <div class="secondaddress">
+                <p class="p1">BANGLORE</p>
+                <p class="p2">
+                    Gradiousbus India Private Limited.
+                    3rd Floor, Tower B1,
+                    Golden Enclave, HAL Old Airport Road,
+                    Murgesh Pallya, Bengaluru,
+                    Karnataka - 560017.
+                </p>
+            </div>
+            <div class="contact_info">
+                <p class="p2">
+                    Ph: +919990600000 <br>
+                    For any Support or Complaints: gradiousbus@complaints.com
+                    Support Time : 24*7
+                </p>
+            </div>
+        </section>
+
+        <section class="footer_section">
+            <div class="footer_section_list_container">
+                <ul class="footer_section_list">
+                    <li><h4>Info</h4></li>
+                    <li>T&C</li>
+                    <li>Privacy policy</li>
+                    <li>FAQ</li>
+                    <li>Blog</li>
+                </ul>
+                <ul class="footer_section_list">
+                    <li><h4>Our Partners</h4></li>
+                    <li>Goibibo Bus</li>
+                    <li>Goibibo Hotels</li>
+                    <li>Makemytrip Hotels</li>
+                </ul>
+            </div>
+            <hr id="footer_section_hrline">
+            <p id="copyrights_text">​© 2024 Gradious India Pvt Ltd. All rights reserved</p>
+
+            <div class="footer_section_social_links_container">
+                <a href="https://www.facebook.com/Gradious" target="_blank" class="social-link"><i class="fa fa-facebook"></i></a>
+                <span class="line">|</span>
+                <a href="https://gradious.com/" target="_blank" class="social-link"><i class="fa fa-google"></i></a>
+                <span class="line">|</span>
+                <a href="https://twitter.com/Gradious3" target="_blank" class="social-link"><i class="fa fa-twitter"></i></a>
+                <span class="line">|</span>
+                <a href="https://www.linkedin.com/company/gradious/"target="_blank"  class="social-link"><i class="fa fa-linkedin"></i></a>
+                <span class="line">|</span>
+                <a href="https://www.instagram.com/company/gradious/"target="_blank"  class="social-link"><i class="fa fa-instagram"></i></a>
+            </div>
+        </section>
+        <script>
+            function home(){
+                fetch('/home')
+                .then(() => window.location.href = '/home')
+                .catch(error => console.error('Home Page error:', error));
+            }
+        </script>
+    </body>
+
+</html>

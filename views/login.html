@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: DM Sans;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: white;
+        }
+
+/* -------------------------------------------------------------------------------------------------------------------------------*/
+        /* Header section */
+        header{
+            background-color: white;
+            border: 2px solid white;
+            padding: 7px;
+            height: 70px;
+            position:relative;
+            box-shadow: 0px 0px 10px rgb(174, 173, 173);
+            left:0px;
+            top:0px;
+            right:0px;
+           /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);*/
+        }
+        header img{
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        #company_name{
+            margin-top: -52px;
+            margin-left: 64px;
+            font-size: 21px;
+            color:#f77054;
+        }
+
+        .header_navigation_container1{
+            margin-top: -3%;
+            margin-left: 90%;
+            /* border: 2px solid black; */
+            width: fit-content;
+        }
+
+        .nav_button1{
+            font-size: 17px;
+            background-color: transparent;
+            border: none;
+            margin-top: 3px;
+            cursor: pointer;
+        }
+
+/* -------------------------------------------------------------------------------------------------------------------------------*/
+        /* Login section */
+
+        .login_section{
+            background-color: #F4F4F4;
+        }
+        .login-container {
+            font-family: DM Sans;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh; /* Adjust as needed */
+            
+        }
+
+        .login-form {
+            width: 300px;
+            padding: 20px;
+            border: 3px solid #F55533;
+            border-radius: 0px;
+            background-color: white;
+            font-family: DM Sans;
+            
+        }
+
+        #form-logo {
+
+            margin-left: 100px;
+            margin-bottom: 30px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        #form-logo img{
+            width : 100px;
+            height : 100px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            background-color: #F4F4F4;
+        }
+
+        .form-group button {
+            background-color: #F55533;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            margin-top : 70px;
+            width : 100%;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .form-group button:hover {
+            background-color: black;
+        }
+
+/* -------------------------------------------------------------------------------------------------------------------------------*/
+        /* Footer Section */
+        .footer_section{
+            background-color: #0D0D3D;
+            /* padding: 78px; */
+            padding-top: 10px;
+            padding-bottom: 40px;
+            height: 53px;
+            position: relative;
+            top: 32px;
+        }
+
+        .footer_section_list_container {
+            display: flex;
+            font-size: 15px;
+            color: white;
+            margin-left: 78%;
+            width: 305px;
+            height: fit-content;
+        }
+        .footer_section_list {
+            width: 68%;
+            padding: 0;
+            list-style: none;
+            margin-top: 41px;
+            cursor: pointer;
+        }
+
+        .footer_section_list li {
+            margin-bottom: 5px;
+        }
+
+        .footer_section_list li h4{
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        #footer_section_hrline{
+            border: 1px solid white;
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+
+        #copyrights_text{
+            font-size: 17px;
+            color: white;
+            margin-left: 40px;
+            margin-top: 36px;
+        }
+
+        .footer_section_social_links_container {
+            color: white;
+            padding: 0px;
+            text-align: right;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 16px;
+            margin-top: -46px;
+            margin-right: 46px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 37px;
+            height: 37px;
+            background-color: white;
+            border-radius: 50%;
+            margin: 15 0px;
+            text-decoration: none;
+            color: black;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-link i {
+            font-size: 20px;
+        }
+
+        .footer_section_social_links_container .social-link:hover {
+                cursor: pointer;
+            }
+        .footer_section_social_links_container .fa-linkedin:hover {
+                color: #0A66C2;
+            }
+        .footer_section_social_links_container .fa-google:hover {
+                color:rgb(228, 77, 77);
+            }
+        .footer_section_social_links_container .fa-facebook:hover {
+                color: #3b5998;
+            }
+        .footer_section_social_links_container .fa-twitter:hover {
+                color: #00acee;
+            }
+        .footer_section_social_links_container .fa-instagram:hover {
+                color: #C13584; 
+            }
+
+        .line {
+                font-size:20px;
+                color: white;
+                margin: 0 5px;
+            }
+    
+    </style>
+</head>
+<body>
+    <section class="header_section">
+        <header>
+            <img src="/Gradious-logo1.png">
+            <h3 id="company_name">gradiousBus</h3>
+            <div class="header_navigation_container1">
+                <button class="nav_button1" onclick="home()">Home</button>
+            </div>
+        </header>
+    </section>
+
+    <section class="login_section">
+    <div class="login-container">
+        <div class="login-form">
+            <form action="/login1" method="post" id="loginForm">
+                <div id ="form-logo">
+                    <img src="/Gradious-logo1.png">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="username" name="username" placeholder="username" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" name="password" placeholder="password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    </section>
+
+    <section class="footer_section">
+        <p id="copyrights_text">​© 2024 Gradious India Pvt Ltd. All rights reserved</p>
+
+        <div class="footer_section_social_links_container">
+            <a href="https://www.facebook.com/Gradious" target="_blank" class="social-link"><i class="fa fa-facebook"></i></a>
+            <span class="line">|</span>
+            <a href="https://gradious.com/" target="_blank" class="social-link"><i class="fa fa-google"></i></a>
+            <span class="line">|</span>
+            <a href="https://twitter.com/Gradious3" target="_blank" class="social-link"><i class="fa fa-twitter"></i></a>
+            <span class="line">|</span>
+            <a href="https://www.linkedin.com/company/gradious/"target="_blank"  class="social-link"><i class="fa fa-linkedin"></i></a>
+            <span class="line">|</span>
+            <a href="https://www.instagram.com/company/gradious/"target="_blank"  class="social-link"><i class="fa fa-instagram"></i></a>
+        </div>
+    </section>
+    <script>
+        function home(){
+            fetch('/home')
+            .then(() => window.location.href = '/home')
+            .catch(error => console.error('Home Page error:', error));
+        }
+    </script>
+</body>
+</html>

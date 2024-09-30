@@ -1,0 +1,1409 @@
+<!-- admin-dashboard.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Source+Sans+3&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <title>admin dashboard</title>
+    <style>
+        body {
+            font-family: DM Sans;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #E7E6E6;
+           
+        }
+
+/* -------------------------------------------------------------------------------------------------------------------------------*/
+        /* Header section */
+        header{
+            background-color: white;
+            border: 2px solid white;
+            padding: 7px;
+            height: 70px;
+            box-shadow: 0px 0px 10px rgb(174, 173, 173);
+           /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);*/
+        }
+        header img{
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        #company_name{
+            margin-top: -52px;
+            margin-left: 64px;
+            font-size: 21px;
+            color:#f77054;
+        }
+
+        .header_navigation_container1{
+            margin-top: -3%;
+            margin-left: 90%;
+            /* border: 2px solid black; */
+            width: fit-content;
+        }
+
+        .nav_button1{
+            font-size: 18px;
+            background-color: transparent;
+            border: none;
+            margin-top: 3px;
+            cursor: pointer;
+        }
+
+/* -------------------------------------------------------------------------------------------------------------------------------*/
+    /*Side bar section */
+
+        .sidebar_section{
+            background-color: #E7E6E6;
+        }
+        .sidebar {
+            width: 240px;
+            height: 100%;
+            background-color: #E7E6E6;
+            color: white;
+            margin-top: 10px; 
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: fixed;
+            border-right: 2px solid #c0bdbd;
+        }
+
+
+        .admin-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 10px;
+            margin-top: 10%;
+            cursor: pointer;
+        }
+
+        .admin-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .admin-name {
+            margin: 0;
+            font-size: 16px;
+            cursor: pointer;
+            color : black;
+            font-weight: bold;
+        }
+
+        .sidebar hr {
+            width: 80%;
+            margin: 10px 0;
+            border: 0.5px solid #c0bdbd;
+        }
+
+        .sidebar-button {
+            background-color: #f77054;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            width: 80%;
+            border-radius: 7px;
+            font-size: 15px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .sidebar button:hover{
+            background-color: black;
+        }
+
+/* -------------------------------------------------------------------------------------------------------------------------------*/
+         /* form.html styling */
+
+        .create-user-form {
+            display: none;
+            max-width: 900px;
+            margin: 80px 400px;
+            margin-right: -90px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            color: #504f4f;
+            
+        }
+        #form-heading{
+           /* background: linear-gradient(90deg,#8c52ff,#ff914d); */
+            
+            color: black;
+            padding : 13px;
+            width :911px; 
+            margin-left: -20px;
+            margin-top: -20px;
+            text-align: center;
+            margin-bottom: 35px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            font-weight: bold;
+            font-size: 19px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+
+        .form-group {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            width: 30%;
+            margin-right: 20px;
+            text-align: right;
+            line-height: 38px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        form button{
+            background-color: #f77054;
+            color: white;
+            cursor: pointer;
+            font-size: 15px;
+            border : none;
+            width : 20%;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 20px;
+            margin-left: 10px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        form input[type ="submit"] :hover{
+            background-color: black;
+        }
+
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        .error-container {
+            display: flex;
+            flex-direction: row;
+            margin-top: -20px; 
+            margin-left: 112px;
+            
+        }
+        .error-message1 { 
+            color: red;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .error-message2 { 
+            color: red;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 425px;
+        }
+
+        .error-message3 { 
+            color: red;
+            font-size: 10.5px;
+            font-weight: bold;
+            margin-left: 425px;
+        }
+
+/* -------------------------------------------------------------------------------------------------------------------------------*/
+        /* USER(AGENT) Table styling */
+
+
+        #viewUsersTable{
+            display:none; 
+            max-width: 1130px; 
+            margin: 40px 300px;
+            margin-right: -120px; 
+            background-color: none; 
+            padding: 20px; 
+            border : none;
+            overflow: auto;
+            letter-spacing: 0.5px;
+        }
+        #table-heading{
+            background: none;
+            color: black;
+            padding : 13px;
+            width :1140px; 
+            margin-left: -55px;
+            margin-top: -30px;
+            text-align: center;
+            margin-bottom: 35px;
+            letter-spacing: 0.5px;
+          /*border: 2px solid black;*/ 
+            position: fixed;
+        }
+
+
+        #usersTable {
+            width :994px;
+            margin-top: 50px;
+            border-collapse: collapse;
+            border : 3px solid #f77054;
+            margin-left:-17px;
+            cursor: pointer;
+        }
+
+        #usersTable td{
+            padding: 12px;
+            text-align: center; 
+            width: 180px; 
+        }
+        .password-cell {
+            font-size: 12px; /* Adjust the font size as needed */
+        }
+
+        #usersTable tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #usersTable th {
+            background-color: #f77054;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            align-items: center;
+
+        }
+
+        #saveButton,#editButton{
+            border-radius: 6px;
+            background-color: rgb(54, 168, 54);
+            font-weight: bold;
+            color : white;
+            font-size: 15px;
+            border : none;
+            cursor: pointer;
+            width : 90px;
+            padding : 7px;
+            margin-left: 5%;
+        }
+
+        #cancelButton,#deleteButton{
+            border-radius: 6px;
+            background-color: rgb(192, 9, 9);
+            font-weight: bold;
+            color : white;
+            font-size: 15px;
+            border : none;
+            cursor: pointer;
+            width : 90px;
+            padding : 7px;
+            margin-left: 5%;
+            margin-top : 5px;
+        }
+
+        #saveButton:hover,#editButton:hover{
+            background-color: #05b776;
+        }
+
+        #cancelButton:hover,#deleteButton:hover{
+            background-color: red;
+        }
+
+/* -------------------------------------------------------------------------------------------------------------------------------*/
+    
+        /* Booking request datatable */
+
+        #pending-bookings-container {
+            margin: 20px;
+        }
+        #booking_request_heading{
+            background: none;
+            color: black;
+            padding : 13px;
+            width : 400px; 
+            margin-left: 42%;
+            margin-top: 30px;
+            text-align: center;
+            margin-bottom: 35px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 22px;
+        }
+
+        #user_request_information_container{
+            border-radius : 24px;
+            border : none; 
+            color : black;
+            background-color:white;
+            width : 25%;
+            margin-left : 19%;
+            padding : 0.5px;
+            margin-bottom: -10px;
+            box-shadow:0 0 10px rgba(0, 0, 0, 0.3) ;
+            cursor: pointer;
+        }
+
+
+        #user_request_information {
+            margin-left : 20px;
+            font-weight: bold;
+            font-size : 14px;
+        }
+
+        #pending-bookings-table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-left : 19%;
+            background-color: #f77054;
+        }
+
+        #pending-bookings-table th, #pending-bookings-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        #pending-bookings-table th {
+            background-color: #f77054;;
+            padding : 15px;
+            color: white;
+            cursor: pointer;
+        }
+
+        #pending-bookings-table tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #pending-bookings-table .duration-column {
+            width: 160px; /* Adjust the width as needed */
+        }
+
+        .duration-column-editing {
+            width: 150px; /* Adjust the width as needed during editing */
+        }
+
+        #editButton{
+            margin-left : 10px;
+        }
+        #deleteButton{
+            margin-left : 10px;
+        }
+
+        #approveButton{
+            border-radius: 6px;
+            background-color: rgb(54, 168, 54);
+            font-weight: bold;
+            color : white;
+            font-size: 13px;
+            border : none;
+            cursor: pointer;
+            width : 90px;
+            padding : 8px;
+            margin-left: 20%;
+            
+        }
+
+        #rejectButton{
+            border-radius: 6px;
+            background-color: rgb(192, 9, 9);
+            font-weight: bold;
+            color : white;
+            font-size: 13px;
+            border : none;
+            cursor: pointer;
+            width : 90px;
+            padding : 8px;
+            margin-left: 20%;
+            margin-top:5px;
+            
+        }
+
+        #approveButton:hover{
+            background-color: #05b776;
+        }
+
+        #rejectButton:hover{
+            background-color: red;
+        }
+
+/* -------------------------------------------------------------------------------------------------------------------------------*/
+        /* Peding booking grouped container/table */
+
+        .booking-group-container {
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            padding: 15px;
+            width : 75%;
+            margin-left : 20%;
+            margin-top : 30px;
+            cursor: pointer;
+            background-color: white;
+        }
+
+        .booking-group-container h3 {
+            color: black;
+            font-size: 17px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            border-radius : 24px;
+            border : none; 
+           /* background: linear-gradient(90deg,#ff3131,#ff914d);
+           background: linear-gradient(90deg,#ffde59,#ff914d);*/
+           /* background: linear-gradient(90deg,#8c52ff,#ff914d); */
+            background-color: none;
+            width : 45%;
+            margin-left : 0px;
+            padding : 10px;
+            cursor: pointer;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+
+        .booking-group-container table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            cursor: pointer;
+            background-color: white;
+           
+        }
+
+        .booking-group-container th, .booking-group-container td {
+            
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .booking-group-container th {
+            background-color: #f77054;;
+            padding: 12px;
+            color: white;
+        }
+
+        .booking-group-container tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .booking-group-container .duration-column {
+            width: 160px;
+            /* Adjust the width as needed */
+        }
+
+/* -------------------------------------------------------------------------------------------------------------------------------*/
+        /* Add bus route section */
+
+        .add_bus_route_section{
+           /* border: 2px solid;  */
+           display : none;
+            position: relative;
+            left: 15%;
+            width: 79%;
+            padding: 11px;
+            padding-top: 42px;
+        }
+        
+        .add_bus_route_section_container{
+            position: relative;
+            /* border: 2px solid;  */
+        }
+
+        #add_bus_route_form_heading{
+            text-align: center;
+            position: relative;
+            left: 30px;
+        }
+
+        .add_bus_route_form_container{
+            /* border: 2px solid;  */
+            width: 76%;
+            padding: 15px;
+            position: relative;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            /* box-shadow: none; */
+            left: 14%;
+            margin-top: 35px;
+        }
+
+        .add_bus_route_form_group{
+            display: flex;
+            margin-bottom: 15px;
+            margin-left: 20px;
+            margin-top: 20px;
+            margin-right:20px
+        }
+
+        #add_bus_route_form .add_bus_route_form_group label{
+            width: 30%;
+            margin-right: 20px;
+            text-align: left;
+            line-height: 38px;
+            color: #504f4f;
+        }
+
+        #add_bus_route_form .add_bus_route_form_group input, select{
+            width : 40%;
+            color: #504f4f;
+        }
+
+        #label_destinationState, #label_destinationCity, #label_departureTime, #label_childPersonFare{
+            margin-left : 30px;
+        }
+
+        .cityNameErrorContainer {
+            display: flex;
+            flex-direction: row;
+            margin-top: -20px;
+            margin-left: 112px;
+            
+        }
+        .city-error-message1 { 
+            color: red;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .city-error-message2 { 
+            color: red;
+            font-size: 12px;
+            font-weight: bold;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <section class="header_section">
+        <header>
+            <img src="/Gradious-logo1.png">
+            <h3 id="company_name">gradiousBus</h3>
+            <div class="header_navigation_container1">
+                <button class="nav_button1" onclick="logout()"><i class="fa fa-sign-out"></i>Logout</button>
+            </div>
+        </header>
+    </section>
+    <section class="sidebar_section">
+        <div class="sidebar">
+            <div class="admin-circle">
+                
+                <img src="/Admin1.png" alt="Admin Profile">
+            </div>
+            <p class="admin-name">Admin</p>
+            <hr>
+            <button class="sidebar-button" onclick="showCreateUserForm()">Create Agent</button>
+            <button class="sidebar-button" onclick="viewUsers()">View Agents</button>
+            <button class="sidebar-button" onclick="viewBookingRequestsGrouped()">Booking Requests</button>
+            <button class="sidebar-button" onclick="viewRequestsHistoryGrouped()">Booking History</button>
+            <button class="sidebar-button" onclick="showAddBusRouteForm()">Add New Route</button> 
+        </div>
+    </section>
+
+    <div id="createUserForm" class="create-user-form">
+
+        <h3 id="form-heading">Fill the Agent information</h3>
+        
+        <form action ="/createUser" method="post" onsubmit="return validateForm()" enctype="application/x-www-form-urlencoded">
+            <div class="form-group">
+                
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Enter first name" required oninput="validateFirstName()">
+                
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Enter last name" required oninput="validateLastName()">
+                
+            </div>
+
+            <div id="errorContainer" class="error-container">
+                <p id="errorFirstName" class="error-message1"></p>
+                <p id="errorLastName" class="error-message2"></p>
+            </div>
+            
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+                <label for="role">Role</label>
+                <select id="role" name="role" required>
+                    <option value="user">User</option>
+                </select>
+                <div id="roleGenderErrors" class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="mobile">Mobile No</label>
+                <input type="tel" id="mobile" name="mobile" placeholder="Enter mobile number" required  oninput="validateMobileNo()">
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter email" required oninput="validateEmail()">
+                
+            </div>
+            <div id="errorContainer" class="error-container">
+                <p id="errorMobileNumber" class="error-message1"></p>
+                <p id="errorEmail" class="error-message2"></p>
+            </div>
+
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter username" required oninput="validateUserName()">
+                
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter password" required oninput="validatePassword()">
+                
+            </div>
+            <div id="errorContainer" class="error-container">
+                <p id="errorUsername" class="error-message1"></p>
+                <p id="errorPassword" class="error-message3"></p>
+            </div>
+ 
+            <button type="submit">Create Agent</button>
+        </form>
+    </div>
+
+    <section class="add_bus_route_section" id="add_bus_route_section">
+        <div class="add_bus_route_section_container">
+            <h2 id="add_bus_route_form_heading">ADD NEW BUS ROUTES</h2>
+            <div class="add_bus_route_form_container">
+                <form action="/addBusRoute" method="post" id ="add_bus_route_form" onsubmit="return validateAddBusRouteForm()" enctype="application/x-www-form-urlencoded">
+
+                    <div class="add_bus_route_form_group">
+                        <label for="sourceState">Source State</label>
+                        <select id="sourceState" name="sourceState" required>
+                            <option value="" disabled selected>Select State</option>
+                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                            <option value="Assam">Assam</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Chhattisgarh">Chhattisgarh</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Haryana">Haryana</option>
+                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                            <option value="Jharkhand">Jharkhand</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Manipur">Manipur</option>
+                            <option value="Meghalaya">Meghalaya</option>
+                            <option value="Mizoram">Mizoram</option>
+                            <option value="Nagaland">Nagaland</option>
+                            <option value="Odisha">Odisha</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Sikkim">Sikkim</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Telangana">Telangana</option>
+                            <option value="Tripura">Tripura</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="Uttarakhand">Uttarakhand</option>
+                            <option value="West Bengal">West Bengal</option>
+                        </select>
+
+                        <label for="destinationState" id="label_destinationState">Destination State</label>
+                        <select id="destinationState" name="destinationState" required>
+                            <option value="" disabled selected>Select State</option>
+                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                            <option value="Assam">Assam</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Chhattisgarh">Chhattisgarh</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Haryana">Haryana</option>
+                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                            <option value="Jharkhand">Jharkhand</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Manipur">Manipur</option>
+                            <option value="Meghalaya">Meghalaya</option>
+                            <option value="Mizoram">Mizoram</option>
+                            <option value="Nagaland">Nagaland</option>
+                            <option value="Odisha">Odisha</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Sikkim">Sikkim</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Telangana">Telangana</option>
+                            <option value="Tripura">Tripura</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="Uttarakhand">Uttarakhand</option>
+                            <option value="West Bengal">West Bengal</option>
+                        </select>
+                    </div>
+
+                    <div class="add_bus_route_form_group">
+                        <label for="sourceCity">Source City</label>
+                        <input type="text" id="sourceCity" name="sourceCity" placeholder="Enter boarding city name" required oninput="validateSourceCity()">
+                        
+                        <label for="destinationCity" id="label_destinationCity">Destination City</label>
+                        <input type="text" id="destinationCity" name="destinationCity" placeholder="Enter droppping city name" required oninput="validateDestinationCity()">
+                    </div>
+
+                    <div id="cityNameErrorContainer" class="cityNameErrorContainer">
+                        <p id="errorSourceCityName" class="city-error-message1"></p>
+                        <p id="errorDestinationCityName" class="city-error-message2"></p>
+                    </div>
+
+                    <div class="add_bus_route_form_group">
+                        <label for="adultPersonFare">Fare per person (adult)</label>
+                        <input type="number" id="adultPersonFare" name="adultPersonFare" required>
+
+                        <label for="childPersonFare" id="label_childPersonFare">Fare per person (child)</label>
+                        <input type="number" id="childPersonFare" name="childPersonFare" required>
+                    </div>
+
+                    <div class="add_bus_route_form_group">
+                        <label for="journeyDuration">Journey Duration (min)</label>
+                        <input type="number" id="journeyDuration" name="journeyDuration" required>
+
+                        <label for="departureTime" id="label_departureTime">Departure Time</label>
+                        <input type="time" id="departureTime" name="departureTime" required>
+                    </div>
+
+                    <button id="add_route_button" type="submit">Add route</button>
+                    <button id="cancel_add_route_button" type="button" onclick="closeAddNewBusRouteForm()">Cancel</button>
+                </form>
+            </div>
+        </div>
+    
+    </section>
+    <div id="viewUsersTable">
+        <h2 id="table-heading">AGENTS LIST</h2>
+        <table id="usersTable" border="1">
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Gender</th>
+                <th>Mobile No</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Action</th>
+            </tr>
+        </table>
+    </div>
+
+        <!-- booking request data table -->
+
+        <div id="pending-bookings-container" style="display: none;">
+            <h2 id="booking_request_heading">LIST OF BOOKING REQUEST</h2>
+            <div id ="user_request_information_container">
+                <p id ="user_request_information"></p>
+            </div>
+            <table id="pending-bookings-table" border="1">
+    
+                    <tr>
+                        <th>ID</th>
+                        <th>Passenger Name</th>
+                        <th>Journey Date</th>
+                        <th>Departure Time</th>
+                        <th>Total Fare</th>
+                        <th>Status</th>
+                        <th>Payment Method</th>
+                        <th>Duration (min)</th>
+                        <th>Source City</th>
+                        <th>Destination City</th>
+                        <th>Action</th>
+                    </tr>
+    
+            </table>
+        </div>
+    <script>
+        function logout() {
+            
+            fetch('/logout', { method: 'POST' })
+                .then(() => window.location.href = '/login')
+                .catch(error => console.error('Logout error:', error));
+        }
+
+        function showCreateUserForm() {
+            document.getElementById('pending-bookings-container').style.display = 'none';
+            document.getElementById('viewUsersTable').style.display = 'none';
+            document.getElementById('add_bus_route_section').style.display= 'none';
+            document.getElementById('createUserForm').style.display = 'block';
+        }
+
+        function hideCreateUserForm() {
+            document.getElementById('pending-bookings-container').style.display = 'none';
+            document.getElementById('createUserForm').style.display = 'none';
+            document.getElementById('add_bus_route_section').style.display= 'none';
+            document.getElementById('viewUsersTable').style.display = 'block';
+        }
+
+        function showAddBusRouteForm(){
+            document.getElementById('pending-bookings-container').style.display = 'none';
+            document.getElementById('createUserForm').style.display = 'none';
+            document.getElementById('viewUsersTable').style.display = 'none';
+            document.getElementById('add_bus_route_section').style.display= 'block';  
+        }
+        function createUser() {
+            showCreateUserForm();
+        }
+
+        function closeAddNewBusRouteForm(){
+            // Clear form fields
+            const addNewBusRouteForm = document.getElementById('add_bus_route_form');
+            add_bus_route_form.reset();
+            /*
+            // Reset error messages
+            customerNameError.textContent = '';
+            emailIdError.textContent = '';
+            */
+        }
+
+        function viewUsers() {
+            hideCreateUserForm();
+            // Fetch and display users from the server
+            fetch('/getUsers')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    const usersTable = document.getElementById('usersTable');
+                    // Clear existing table content
+                    usersTable.innerHTML = "<tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Gender</th><th>Mobile No</th><th>Email</th><th>Role</th><th>Username</th><th>Password</th><th>Action</th></tr>";
+                    // Populate the table with user data
+                    data.forEach(user => {
+                        const row = usersTable.insertRow(-1);
+                        row.insertCell(0).textContent = user.ID;
+                        row.insertCell(1).textContent = user.First_Name;
+                        row.insertCell(2).textContent = user.Last_Name;
+                        row.insertCell(3).textContent = user.Gender;
+                        row.insertCell(4).textContent = user.Mobile_No;
+                        row.insertCell(5).textContent = user.Email_ID;
+                        row.insertCell(6).textContent = user.Role;
+                        row.insertCell(7).textContent = user.User_Name;
+                        row.insertCell(8).textContent = user.Password;
+
+                /*        // Password cell
+                        const passwordCell = row.insertCell(8);
+                        passwordCell.textContent = user.Password;
+                        passwordCell.classList.add('password-cell'); // Add CSS class to the password cell
+*/
+                        
+                        const actionCell = row.insertCell(9);
+                        // Edit button
+                        const editButton = document.createElement('button');
+                        editButton.id = 'editButton';
+                        editButton.innerHTML = 'Edit';
+                        editButton.addEventListener('click', () => editUser(row, user));
+                        actionCell.appendChild(editButton);
+
+                        // Delete button
+                        const deleteButton = document.createElement('button');
+                        deleteButton.style.display = 'block';
+                        deleteButton.id = 'deleteButton';
+                        deleteButton.innerHTML = 'Delete';
+                        deleteButton.addEventListener('click', () => deleteuser(row, user));
+                        actionCell.appendChild(deleteButton);
+
+                        // Save button (initially hidden)
+                        const saveButton = document.createElement('button');
+                        saveButton.style.display = 'none';
+                        saveButton.id = 'saveButton';
+                        saveButton.innerHTML = 'Save';
+                        saveButton.addEventListener('click', () => saveUser(row, user));
+                        actionCell.appendChild(saveButton);
+
+                        // Cancel button (initially hidden)
+                        const cancelButton = document.createElement('button');
+                        cancelButton.style.display = 'none';
+                        cancelButton.id = 'cancelButton';
+                        cancelButton.innerHTML = 'Cancel';
+                        cancelButton.addEventListener('click', () => cancelEdit(row, user));
+                        actionCell.appendChild(cancelButton);
+         
+                    });
+                })
+                .catch(error => console.error('Error fetching users:', error));
+        }
+        // Edit user function
+        function editUser(row, user) {
+            // Save the original values
+            console.log('Mobile Number:', row.cells[4].textContent);
+            const originalValues = {
+                id : row.cells[0].textContent,
+                firstName: row.cells[1].textContent,
+                lastName: row.cells[2].textContent,
+                gender: row.cells[3].textContent,
+                mobileNo: row.cells[4].textContent,
+                email: row.cells[5].textContent,
+                role: row.cells[6].textContent,
+                username: row.cells[7].textContent,
+                password: row.cells[8].textContent,
+            };
+
+                // Enable editing of the row
+                row.cells[1].contentEditable = true;
+                row.cells[2].contentEditable = true;
+                row.cells[3].contentEditable = true;
+                row.cells[4].contentEditable = true;
+                row.cells[5].contentEditable = true;
+            // row.cells[6].contentEditable = true;
+                row.cells[7].contentEditable = true;
+                row.cells[8].contentEditable = true;
+
+                // Show save and cancel buttons, hide edit button
+                row.cells[9].querySelector('button:nth-child(1)').style.display = 'none'; // Edit button
+                row.cells[9].querySelector('button:nth-child(2)').style.display = 'none'; // delete button
+                row.cells[9].querySelector('button:nth-child(3)').style.display = 'inline-block'; // Save button
+                row.cells[9].querySelector('button:nth-child(4)').style.display = 'inline-block'; // Cancel button
+            }
+
+        // Save user function
+        function saveUser(row, user) {
+            // Validate the edited values here if needed
+
+            // Update the user object with the edited values
+            user.First_Name = row.cells[1].textContent;
+            user.Last_Name = row.cells[2].textContent;
+            user.Gender = row.cells[3].textContent;
+            user.Mobile_No = row.cells[4].textContent;
+            user.Email_ID = row.cells[5].textContent;
+            user.Role = row.cells[6].textContent;
+            user.User_Name = row.cells[7].textContent;
+            user.Password = row.cells[8].textContent;
+
+            console.log('save Mobile Number:', row.cells[4].textContent);
+            console.log('type of save Mobile Number:', typeof(row.cells[4].textContent));
+            // Disable editing of the row
+            row.cells[1].contentEditable = false;
+            row.cells[2].contentEditable = false;
+            row.cells[3].contentEditable = false;
+            row.cells[4].contentEditable = false;
+            row.cells[5].contentEditable = false;
+            row.cells[6].contentEditable = false;
+            row.cells[7].contentEditable = false;
+            row.cells[8].contentEditable = false;
+
+            // Show edit button, hide save and cancel buttons
+            row.cells[9].querySelector('button:nth-child(1)').style.display = 'inline-block'; // Edit button
+            row.cells[9].querySelector('button:nth-child(2)').style.display = 'inline-block'; // delete button
+            row.cells[9].querySelector('button:nth-child(3)').style.display = 'none'; // Save button
+            row.cells[9].querySelector('button:nth-child(4)').style.display = 'none'; // Cancel button
+
+            // Send a request to the server to update the user in the database
+            fetch(`/updateUser/${user.ID}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                
+                body: JSON.stringify(user),
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        console.error('Error updating user:', response.statusText);
+                    }
+                })
+                .catch(error => console.error('Error updating user:', error));
+        }
+
+        // Cancel edit function
+        function cancelEdit(row, user) {
+            // Restore the original values
+            row.cells[0].textContent = user.ID;
+            row.cells[1].textContent = user.First_Name;
+            row.cells[2].textContent = user.Last_Name;
+            row.cells[3].textContent = user.Gender;
+            row.cells[4].textContent = user.Mobile_No;
+            row.cells[5].textContent = user.Email_ID;
+            row.cells[6].textContent = user.Role;
+            row.cells[7].textContent = user.User_Name;
+            row.cells[8].textContent = user.Password;
+
+            // Disable editing of the row
+            row.cells[1].contentEditable = false;
+            row.cells[2].contentEditable = false;
+            row.cells[3].contentEditable = false;
+            row.cells[4].contentEditable = false;
+            row.cells[5].contentEditable = false;
+            row.cells[6].contentEditable = false;
+            row.cells[7].contentEditable = false;
+            row.cells[8].contentEditable = false;
+
+            // Show edit button, hide save and cancel buttons
+            row.cells[9].querySelector('button:nth-child(1)').style.display = 'inline-block'; // Edit button
+            row.cells[9].querySelector('button:nth-child(2)').style.display = 'inline-block'; // delete button
+            row.cells[9].querySelector('button:nth-child(3)').style.display = 'none'; // Save button
+            row.cells[9].querySelector('button:nth-child(4)').style.display = 'none'; // Cancel button
+        }
+
+        //function to delete user
+
+        function deleteuser(row,user) {
+            const confirmation = confirm("Are you sure you want to delete the user?");
+            if(confirmation){
+                // Send a request to the server to delete the user
+                fetch(`/deleteUser/${user.ID}`, { method: 'DELETE' })
+                    .then(response => {
+                        if (response.ok) {
+                            // If the deletion is successful then refresh the user list
+                            viewUsers();
+                        } else {
+                            console.error('Error deleting user:', response.statusText);
+                        }
+                    })
+                    .catch(error => console.error('Error deleting user:', error));
+        }
+        }
+
+    function viewBookingRequestsGrouped() {
+    document.getElementById('viewUsersTable').style.display = 'none';
+    document.getElementById('createUserForm').style.display = 'none';
+    document.getElementById('add_bus_route_section').style.display= 'none';
+    document.getElementById('pending-bookings-container').style.display = 'block';
+
+    fetch('/getBookingRequestGrouped')
+        .then(response => response.json())
+        .then(data => {
+            const pendingBookingsContainer = document.getElementById('pending-bookings-container');
+            pendingBookingsContainer.innerHTML = ""; // Clear existing content
+
+            // Create a container for each group
+            const bookingrequestheading = document.createElement('h3'); 
+            bookingrequestheading.id = 'booking_request_heading';
+            bookingrequestheading.textContent = `List of Booking Request`;
+            pendingBookingsContainer.appendChild(bookingrequestheading);
+
+            // Iterate over each group (each full_name)
+            for (const fullName in data) {
+                if (data.hasOwnProperty(fullName)) {
+                    // Create a container for each group
+                    const groupContainer = document.createElement('div');
+                    groupContainer.id = fullName.replace(/\s/g, ''); // Use full_name without spaces as an ID
+                    groupContainer.className = 'booking-group-container';
+
+
+                    // Create a heading for the group
+                    const heading = document.createElement('h3');
+                    heading.textContent = `${fullName} requested booking for  the following tickets`;
+                    // Append the heading to the groupContainer
+                    groupContainer.appendChild(heading);
+
+                    // Create a table for the bookings of this group
+                    const bookingsTable = document.createElement('table');
+                    bookingsTable.border = '1';
+                    bookingsTable.innerHTML = "<tr><th>ID</th><th>Passenger Name</th><th>Journey Date</th><th>Departure Time</th><th>Total Fare</th><th>Status</th><th>Payment Method</th><th>Duration (min)</th><th>Source City</th><th>Destination City</th><th>Action</th></tr>";
+
+                    // Iterate over bookings in the group and populate the table
+                    data[fullName].forEach(booking => {
+                        const row = bookingsTable.insertRow(-1);
+
+                        // Convert the ISO date string to a Date object
+                        const bookingDate = new Date(booking.Booking_Date);
+
+                        // Format the date to display only the date portion
+                        const formattedDate = bookingDate.toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'numeric',
+                        day: 'numeric'
+                        });
+                        // Populate the table rows with booking data
+                        row.insertCell(0).textContent = booking.ID;
+                        row.insertCell(1).textContent = booking.Customer_Name;
+                        row.insertCell(2).textContent = formattedDate;
+                        row.insertCell(3).textContent = booking.Booking_Time;
+                        row.insertCell(4).textContent = booking.Total_Amount;
+                        row.insertCell(5).textContent = booking.Status;
+                        row.insertCell(6).textContent = booking.Payment_Method;
+                        row.insertCell(7).textContent = booking.Duration_Minutes;
+                        row.cells[7].classList.add('duration-column');
+                        row.insertCell(8).textContent = booking.Source_City;
+                        row.insertCell(9).textContent = booking.Destination_City;
+                        
+                        const actionCell = row.insertCell(10);
+                        const approveButton = document.createElement('button');
+                        approveButton.id = 'approveButton';
+                        approveButton.innerHTML = 'Approve';
+                        approveButton.addEventListener('click', () => approveBooking(booking.ID));
+                        actionCell.appendChild(approveButton);
+
+                        const rejectButton = document.createElement('button');
+                        rejectButton.id = 'rejectButton';
+                        rejectButton.innerHTML = 'Reject';
+                        rejectButton.addEventListener('click', () => rejectBooking(booking.ID));
+                        actionCell.appendChild(rejectButton);
+                    });
+
+                    groupContainer.appendChild(bookingsTable);
+                    pendingBookingsContainer.appendChild(groupContainer);
+                }
+            }
+        })
+        .catch(error => console.error('Error fetching pending bookings:', error));
+}
+
+function viewRequestsHistoryGrouped() {
+    
+    document.getElementById('viewUsersTable').style.display = 'none';
+    document.getElementById('createUserForm').style.display = 'none';
+    document.getElementById('add_bus_route_section').style.display= 'none';
+    document.getElementById('pending-bookings-container').style.display = 'block';
+
+    fetch('/getRequestsHistoryGrouped')
+        .then(response => response.json())
+        .then(data => {
+            const pendingBookingsContainer = document.getElementById('pending-bookings-container');
+            pendingBookingsContainer.innerHTML = ""; // Clear existing content
+
+            const bookingrequestheading = document.createElement('h3');
+            bookingrequestheading.id = 'booking_request_heading';
+            bookingrequestheading.textContent = `Request History`;
+            pendingBookingsContainer.appendChild(bookingrequestheading);
+            // Iterate over each group (each full_name)
+            for (const fullName in data) {
+                if (data.hasOwnProperty(fullName)) {
+                    // Create a container for each group
+                    const groupContainer = document.createElement('div');
+                    groupContainer.id = fullName.replace(/\s/g, ''); // Use full_name without spaces as an ID
+                    groupContainer.className = 'booking-group-container';
+
+                    // Create a heading for the group
+                    const heading = document.createElement('h3');
+                    heading.textContent = `${fullName} requested the following tickets`;
+                    groupContainer.appendChild(heading);
+
+                    // Create a table for the bookings of this group
+                    const bookingsTable = document.createElement('table');
+                    bookingsTable.border = '1';
+                    bookingsTable.innerHTML = "<tr><th>ID</th><th>Passenger Name</th><th>Journey Date</th><th>Departure Time</th><th>Total Fare</th><th>Status</th><th>Payment Method</th><th>Duration (min)</th><th>Source City</th><th>Destination City</th></tr>";
+
+                    // Iterate over bookings in the group and populate the table
+                    data[fullName].forEach(booking => {
+                        const row = bookingsTable.insertRow(-1);
+
+                        // Convert the ISO date string to a Date object
+                        const bookingDate = new Date(booking.Booking_Date);
+
+                        // Format the date to display only the date portion
+                        const formattedDate = bookingDate.toLocaleDateString('en-US', {
+                            year: 'numeric',
+                            month: 'numeric',
+                            day: 'numeric'
+                        });
+                        // Populate the table rows with booking data
+                        row.insertCell(0).textContent = booking.ID;
+                        row.insertCell(1).textContent = booking.Customer_Name;
+                        row.insertCell(2).textContent = formattedDate;
+                        row.insertCell(3).textContent = booking.Booking_Time;
+                        row.insertCell(4).textContent = booking.Total_Amount;
+                        row.insertCell(5).textContent = booking.Status;
+                        row.insertCell(6).textContent = booking.Payment_Method;
+                        row.insertCell(7).textContent = booking.Duration_Minutes;
+                        row.cells[7].classList.add('duration-column');
+                        row.insertCell(8).textContent = booking.Source_City;
+                        row.insertCell(9).textContent = booking.Destination_City;
+                    });
+
+                    groupContainer.appendChild(bookingsTable);
+                    pendingBookingsContainer.appendChild(groupContainer);
+                }
+            }
+        })
+        .catch(error => console.error('Error fetching request history:', error));
+}
+        // Function to handle approving a booking
+        function approveBooking(bookingId) {
+            fetch(`/approveBooking/${bookingId}`, { method: 'POST' })
+                .then(response => {
+                    if (response.ok) {
+                        // If the approval is successful, refresh the booking requests
+                        alert(`Booking ID ${bookingId} has been approved.`);
+                        viewBookingRequestsGrouped();
+
+                    } else {
+                        console.error('Error approving booking:', response.statusText);
+                    }
+                })
+                .catch(error => console.error('Error approving booking:', error));
+        }
+
+        // Function to handle rejecting a booking
+        function rejectBooking(bookingId) {
+            fetch(`/rejectBooking/${bookingId}`, { method: 'POST' })
+                .then(response => {
+                    if (response.ok) {
+                        // If the rejection is successful, refresh the booking requests
+                        alert(`Booking ID ${bookingId} has been rejected.`);
+                        viewBookingRequestsGrouped();
+                    } else {
+                        console.error('Error rejecting booking:', response.statusText);
+                    }
+                })
+                .catch(error => console.error('Error rejecting booking:', error));
+        }
+
+        function validateFirstName() {
+            var firstName = document.getElementById("firstName").value;
+            var nameRegex = /^[a-zA-Z]+$/;
+            var errorFirstName = document.getElementById("errorFirstName");
+            errorFirstName.innerHTML = "";
+                if (!nameRegex.test(firstName)) {
+                    errorFirstName.innerHTML = "First Name should contain only letters.";
+                    return false;
+                }
+        }
+        function validateLastName() {
+            var lastName = document.getElementById("lastName").value;
+            var nameRegex = /^[a-zA-Z]+$/;
+            var errorLastName = document.getElementById("errorLastName");
+            errorLastName.innerHTML = "";
+                if (!nameRegex.test(lastName)) {
+                        errorLastName.innerHTML = "Last Name should contain only letters.";
+                        return false;
+                }
+        }
+
+        function validateMobileNo() {
+            var mobile = document.getElementById("mobile").value;
+            var mobileRegex = /^[0-9]{10}$/;
+            var errorMobileNumber = document.getElementById("errorMobileNumber");
+            errorMobileNumber.innerHTML = "";
+            if (!mobileRegex.test(mobile)) {
+                errorMobileNumber.innerHTML = "Mobile number must be a 10-digit number.";
+                return false;
+            }
+        }
+
+
+        function validateEmail() {
+            var email = document.getElementById("email").value;
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var errorEmail = document.getElementById("errorEmail");
+            errorEmail.innerHTML = "";
+            if (!emailRegex.test(email)) {
+                errorEmail.innerHTML = "Invalid email address.";
+                return false;
+            }
+        }
+
+
+        function validateUserName() {
+            var username = document.getElementById("username").value;
+            var usernameRegex = /^.{8,15}$/;
+            var errorUsername = document.getElementById("errorUsername");
+            errorUsername.innerHTML = "";
+            if (!usernameRegex.test(username)) {
+                errorUsername.innerHTML = "Username must be between 8 and 15 characters.";
+                return false;
+            }
+        }
+
+        function validatePassword() {
+            var password = document.getElementById("password").value;
+            var passwordRegex =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,12}$/;
+            var errorPassword = document.getElementById("errorPassword");
+            errorPassword.innerHTML = "";
+            if (!passwordRegex.test(password)) {
+                errorPassword.innerHTML = 'Password must be at least 8 characters & at most 12 characters and include at least one uppercase letter, one lowercase letter, one digit, and one special character.';
+                return false;
+            }
+        }
+
+        async function validateForm() {
+
+            // Run asynchronous validations
+            await Promise.all([
+                validateFirstName(),
+                validateLastName(),
+                validateEmail(),
+                validateMobileNo(),
+                validateUserName(),
+                validatePassword(),
+            ]);
+
+            // Check the results after all validations
+            var errorFirstName = document.getElementById("errorFirstName").innerHTML;
+            var errorLastName = document.getElementById("errorLastName").innerHTML;
+            var errorMobileNumber = document.getElementById("errorMobileNumber").innerHTML;
+            var errorEmail = document.getElementById("errorEmail").innerHTML;
+            var errorUsername = document.getElementById("errorUsername").innerHTML;
+            var errorPassword = document.getElementById("errorPassword").innerHTML;
+
+            alert("User Created!");
+            // Return true if all validations pass
+            return (
+                errorFirstName === "" &&
+                errorLastName === "" &&
+                errorMobileNumber === "" &&
+                errorEmail === "" &&
+                errorUsername === "" &&
+                errorPassword === ""
+            );
+        }
+
+        function validateSourceCity(){
+            var sourceCity = document.getElementById("sourceCity").value;
+            var citynameRegex = /^[a-zA-Z]+$/;
+            var errorSourceCityName = document.getElementById("errorSourceCityName");
+            errorSourceCityName.innerHTML = "";
+            if (!citynameRegex.test(sourceCity)) {
+                errorSourceCityName.innerHTML = "Source city name should contain only letters.";
+                    return false;
+                }
+        }
+
+        function validateDestinationCity(){
+            var destinationCity = document.getElementById("destinationCity").value;
+            var citynameRegex = /^[a-zA-Z]+$/;
+            var errorDestinationCityName = document.getElementById("errorSourceCityName");
+            errorDestinationCityName.innerHTML = "";
+            if (!citynameRegex.test(destinationCity)) {
+                errorDestinationCityName.innerHTML = "Destination city name should contain only letters.";
+                    return false;
+                }
+        }
+
+        async function validateAddBusRouteForm(){
+                // Run asynchronous validations
+                await Promise.all([
+                validateSourceCity(),
+                validateDestinationCity(),
+            ]);
+
+            // Check the results after all validations
+            var errorSourceCityName = document.getElementById("errorSourceCityName").innerHTML;
+            var errorDestinationCityName = document.getElementById("errorDestinationCityName").innerHTML;
+
+            alert("New Bus Route Added!");
+            // Return true if all validations pass
+            return (
+                errorSourceCityName === "" &&
+                errorDestinationCityName === ""
+            );
+        }
+    </script>
+</body>
+</html>
